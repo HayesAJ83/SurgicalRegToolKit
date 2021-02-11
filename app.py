@@ -37,11 +37,11 @@ import requests
 def main():    
     st.sidebar.subheader('Navigator')
     page = st.sidebar.radio('',#'Go to',
-                            ["Registrar Toolkit",
+                            ["Gen Surgery Registrar Toolkit",
                              "Excision Ltd Team",])
 
-    if page ==   "Registrar Toolkit":       show_explore()
-    elif page == "Excision Ltd":            show_the_app_team()
+    if page ==   "Gen Surgery Registrar Toolkit":       show_explore()
+    elif page == "Excision Ltd Team":                   show_the_app_team()
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
@@ -97,8 +97,8 @@ def show_the_app_team():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def show_explore():
-    st.sidebar.subheader('Registrar Toolkit')
-    exp = st.sidebar.radio('',#'Select',
+    st.sidebar.subheader('Toolkit')
+    exp = st.sidebar.radio('Go to',
                                 ["About this App",
                                  "Lothian Hospitals",
                                  "UGI / General Surgery Dept",
@@ -138,19 +138,24 @@ def exp_about():
     st.write('''About.''')
     st.subheader('Using This App')
     st.write(' ')
-    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Rotas:</span>
-                   <span style="font-size:12pt;color:black;"> Here you can search eponyms related
-                   to a disease.</span>''',unsafe_allow_html=True)
-    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">By Journal:</span>
-                   <span style="font-size:12pt;color:black;"> In this section, journals can be
-                   selected to find which eponyms can be traced to their of publication archives.
-                   Explore through time using the time travel function.</span>''',
+    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Lothian Hospitals:</span>
+                   <span style="font-size:12pt;color:black;"> Maps and info.</span>''',unsafe_allow_html=True)
+    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">UGI / General Surgery Dept at RIE:</span>
+                   <span style="font-size:12pt;color:black;"> Detail about our unit.</span>''',
                    unsafe_allow_html=True)
-    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">By Operation:</span>
-                   <span style="font-size:12pt;color:black;"> Here you can choose an operation type
-                   (eg. Oesophagectomy), and then access all the common eponyms related to that
-                   procedure.</span>''',unsafe_allow_html=True)
+    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Emergency Teams:</span>
+                   <span style="font-size:12pt;color:black;"> How these work.</span>''',unsafe_allow_html=True)
+    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Elective:</span>
+                   <span style="font-size:12pt;color:black;"> Days surgery, Cancer, Bariatrics, Benign Hiatal, Hernia work these work.</span>''',unsafe_allow_html=True)
+    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Rotas:</span>
+                   <span style="font-size:12pt;color:black;"> How these work.</span>''',unsafe_allow_html=True)
+    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Useful info for work:</span>
+                   <span style="font-size:12pt;color:black;"> Summary.</span>''',unsafe_allow_html=True)
+    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Useful info for outside work:</span>
+                   <span style="font-size:12pt;color:black;"> GPs, School, Sports, Bars, Restaurants, Churches/Worship, Nightclubs, Guitar shops, Food shops, Renting.</span>''',unsafe_allow_html=True)
 
+    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Tips & tricks:</span>
+                   <span style="font-size:12pt;color:black;">Barbora, Gustav, Adam, Maria, Matteo and others.</span>''',unsafe_allow_html=True)
 
     st.subheader('Who Is This App For?')
     st.markdown(' ')
@@ -169,17 +174,17 @@ def exp_about():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def exp_Lothian():
-    st.markdown('''### Search the full database''')
-    types = st.radio('1st) Optional - choose specialties:',["All",])
+    st.markdown('''### Regional Hospitals''')
+    types = st.radio('Hospital:',["Royal Infirmary of Edinburgh",
+                                  "St. John's Hospital",
+                                  "Western General Hospital",
+                                  "Astlie Ainslee",
+                                  "Borders General",])
 
-    if types == "All":
+    if types == "Royal Infirmary of Edinburgh":
         url = 'https://raw.githubusercontent.com/HayesAJ83/SurgicalEps_01/main/Eponyms4python_Lite.csv'
         df1 = pd.read_csv(url, dtype={'PMID':str,'Year':int})
         df2 = df1.sort_values(by=['Eponym'],ascending=True)
-
-        min_yrs, max_yrs = st.slider("2nd) Optional - define a time window:", 1500, 2050, [1550, 2021])
-        st.markdown("---")
-        new_1T = df2.loc[(df2['Year'] >= min_yrs) & (df2['Year'] <= max_yrs)]
 
 
     
@@ -190,7 +195,7 @@ def exp_Lothian():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def exp_UGI():
-    st.subheader("Find eponyms related to selected diseases") 
+    st.subheader("The UGI / General Surgery Dept") 
     
 
 #-------------------------------------------------------------------------------------------------#
@@ -201,7 +206,7 @@ def exp_UGI():
 #-------------------------------------------------------------------------------------------------#
 def exp_ET():
     #st.markdown('''[Advert space for Google AdSense4]''')
-    st.subheader("Find eponyms that can be traced to journal archives") 
+    st.subheader("Emergency Take") 
     ScreenSize = st.radio('1st) Select screen size:',
                           options=['Desktop / Laptop / Tablet'],index=0)
 
@@ -215,7 +220,7 @@ def exp_ET():
 #-------------------------------------------------------------------------------------------------#
 def exp_Elective():
     
-    st.subheader("Elective") 
+    st.subheader("Elective - UGI / General Surgery") 
    
 
 
@@ -226,7 +231,7 @@ def exp_Elective():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def exp_Rotas():
-    st.subheader("Rotas") 
+    st.subheader("Rotas - Link to latest version - upload into Github") 
    
 
 
@@ -239,85 +244,35 @@ def exp_Rotas():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def exp_InWork():
-    st.markdown('''### Search by eponym category''')
+    st.markdown('''### Helpful info for in work''')
     ScreenSize = st.radio('1st) Select screen size:',
                      options=['Smartphone',
                               'Desktop / Laptop / Tablet',],index=0)
 
-    if ScreenSize == "Smartphone":
-
-        url = 'https://raw.githubusercontent.com/HayesAJ83/SurgicalEps_01/main/Eponyms4python_Lite.csv'
-        df1 = pd.read_csv(url, dtype={'PMID':str,'Year':int})
-        df2 = df1.sort_values(by=['Year'],ascending=True)
-        spec_df = df2['Type'].dropna()
-        string = spec_df.str.cat(sep=',')
-        splits = string.split(",")
-        S = set(splits)
-        T = np.array(list(S)).astype(object)
-        U = np.sort(T)
-        min_yrs, max_yrs = st.slider("2nd) Optional - define a time window:", 1500, 2050, [1550, 2021])
-        new_geo2 = df2.sort_values(by=['Year'],ascending=True)
-        new_geo2T = new_geo2.loc[(new_geo2['Year'] >= min_yrs) & (new_geo2['Year'] <= max_yrs)]
-        st.markdown('''<span style="font-size:10pt;color:black;">Click on category type to zoom in,
-                       and in the center to pan out.</span>''', unsafe_allow_html=True)
-        new_geo2T["Categories"] = "Categories"
-        figJDLT = px.sunburst(new_geo2T,path=['Categories','Type_short','Eponym_easy'],
-                              color='Log2_GxP',hover_data=['Eponym'],
-                              color_continuous_scale='Magma',)#'RdBu'viridis
-        figJDLT.update_layout(margin=dict(l=0, r=0, t=0, b=10),width=350,height=350)
-        figJDLT.update_traces(hovertemplate='<b>%{label}</b>') 
-        st.write(figJDLT)
-        journal_spec = st.multiselect(
-            "3rd) Optional - Select specific categories. Type in box:",
-             options=list(U), format_func=lambda x: ' ' if x == '1' else x,)
-
-
-    if ScreenSize == "Desktop / Laptop / Tablet":
-
-        
-        url = 'https://raw.githubusercontent.com/HayesAJ83/SurgicalEps_01/main/Eponyms4python_Lite.csv'
-        df1 = pd.read_csv(url, dtype={'PMID':str,'Year':int})
-        df2 = df1.sort_values(by=['Year'],ascending=True)
-        spec_df = df2['Type'].dropna()
-        string = spec_df.str.cat(sep=',')
-        splits = string.split(",")
-        S = set(splits)
-        T = np.array(list(S)).astype(object)
-        U = np.sort(T)
-        min_yrs, max_yrs = st.slider("2nd) Optional - define a time window:", 1500, 2050, [1550, 2021])
-        new_geo2 = df2.sort_values(by=['Year'],ascending=True)
-        new_geo2T = new_geo2.loc[(new_geo2['Year'] >= min_yrs) & (new_geo2['Year'] <= max_yrs)]
-        st.markdown('''<span style="font-size:12pt;color:black;">**Click on a category type to zoom in**,
-                       and click in the center to pan out.</span>''', unsafe_allow_html=True)
-        new_geo2T["Categories"] = "Categories"
-        figJDLT = px.sunburst(new_geo2T,path=['Categories','Type_short','Eponym_easy'],
-                              color='Log2_GxP',hover_data=['Eponym'],values='Year',
-                              color_continuous_scale='Magma',)#'RdBu'viridis
-        figJDLT.update_layout(margin=dict(l=0, r=0, t=0, b=10),width=700,height=550)
-        figJDLT.update_traces(hovertemplate='<b>%{label}</b>') 
-        st.write(figJDLT)
-        journal_spec = st.multiselect(
-            "3rd) Optional - Select specific categories. Type in box:",
-             options=list(U), format_func=lambda x: ' ' if x == '1' else x,)
+   
 
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
-#  Outside Work (9)                                                                                   #
+#  Outside Work (9)                                                                               #
 # ::: Handles the                                                                                 #                                                                                              #
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def exp_OutWork():
-    st.subheader("Outside Work")
+    st.subheader("Helpful info for Outside Work")
     exp = st.radio('1st) Choose your setting:',#'Select',
                                 ['Leisure',        # - Scars, Signs, Diseases & Severity Scores",
                                  'Medical Care',   # - History of Surgery',
-                                 'Child Care',     #- Incisions, Instruments & Operations",
+                                 'Child Care',     #- Incisions
+                                 'Places of Worship',
+                                 'Best Bars'
                                  ])
 
-    if   exp == "Leisure":          out_leisure()       #T1 #- Scars, Signs, Severity Scores
-    elif exp == 'Medical Care':     out_medical()   #T2 #- History
-    elif exp == "Child Care":       out_child()        #T3 #- Incisions, Instruments & Operations
+    if   exp == "Leisure":           out_leisure()       #T1 #- Scars, Signs, Severity Scores
+    elif exp == 'Medical Care':      out_medical()   #T2 #- History
+    elif exp == "Child Care":        out_child()        #T3 #- Incisions, Instruments & Operations
+    elif exp == "Places of Worship": out_worship()
+    elif exp == "Best Bars":         out_bars()
 
 
 
@@ -330,7 +285,7 @@ def exp_OutWork():
 #-------------------------------------------------------------------------------------------------#
 def exp_Tips():
     st.subheader("Tips from our previous fellows")
-    exp = st.radio('1st) Choose your setting:',#'Select',
+    exp = st.radio('Topics:',#'Select',
                                 ['Things I wish someone had told me',        # - ,
                                  ])
 
