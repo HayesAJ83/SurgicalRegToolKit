@@ -173,22 +173,22 @@ def exp_Lothian():
     types = st.radio('Hospitals:',
                      options=["Astley Ainslie Hospital",
                               "Borders General Hospital",
-                              "Royal Infirmary of Edinburgh",
                               "Royal Edinburgh Hospital",
+                              "Royal Infirmary of Edinburgh",
                               "St. John's Hospital",
-                              "Victoria Hospital Kirkaldy",
-                              "Western General Hospital",], index=2)
+                              "Victoria Hospital",
+                              "Western General Hospital",], index=3)
 
     if types == "Royal Infirmary of Edinburgh":
         
         url = 'https://raw.githubusercontent.com/HayesAJ83/SurgicalRegToolKit/main/Lothian4python_Lite.csv'
         df1 = pd.read_csv(url, dtype={'PMID':str,'Year':int})
-        df2 = df1.sort_values(by=['Eponym'],ascending=True)
+        df2 = df1.sort_values(by=['Place'],ascending=True)
         st.write(df2)
 
 
 
-        st.markdown("""<style type="text/css" media="screen">div[role="listbox"] ul {height:100px}</style>""",unsafe_allow_html=True,)
+
         mapbox_access_token = 'pk.eyJ1IjoiYWpoYXllczgzIiwiYSI6ImNrY2pqM2lvMDB4Z24ydG8zdDl0NTYwbTUifQ.2DKVfTAaE77XAXMpDeq_Pg'
         url = 'https://raw.githubusercontent.com/HayesAJ83/SurgicalEps_01/main/Eponyms4python_Lite.csv'
         df1 = pd.read_csv(url, dtype={'PMID':str,'Year':int})
