@@ -130,10 +130,10 @@ def show_explore():
 def exp_about():
 #Page
     st.markdown("---")
-    st.title('Who is this App for?')
+    st.subheader('Who is this App for?')
     st.write('''We designed this App to help visiting Fellows settle into the local Department of surgery and
                 living in Edinburgh.''')
-    st.title('How to use this App?')
+    st.subheadersubheader('How to use this App?')
     st.write('Select from options above to access different types of helpful information. Below is a summary of the different options.')
     st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Regional Hospitals:</span>
                    <span style="font-size:12pt;color:black;"> Maps and info from NHS Lothian and neighboring health boards
@@ -167,17 +167,16 @@ def exp_about():
 #-------------------------------------------------------------------------------------------------#
 def exp_Lothian():
     st.markdown("---")
-    st.title('''Regional Hospitals''')
-    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Lothian Hospitals:</span>
-                   <span style="font-size:12pt;color:black;"> Maps and info.</span>''',unsafe_allow_html=True)
+    st.subheader('''Regional Hospitals''')
+    st.write(' ')
 
-
-    types = st.radio('Hospital:',options=["Astlie Ainslee",
-                                  "Borders General"
-                                  "Royal Infirmary of Edinburgh",
-                                  "St. John's Hospital",
-                                  "Victoria Hospital Kirkaldy",
-                                  "Western General Hospital",], index=2)
+    types = st.radio('Hospitals:',
+                     options=["Astlie Ainslee",
+                              "Borders General",
+                              "Royal Infirmary of Edinburgh",
+                              "St. John's Hospital",
+                              "Victoria Hospital Kirkaldy",
+                              "Western General Hospital",], index=2)
 
     if types == "Royal Infirmary of Edinburgh":
         
