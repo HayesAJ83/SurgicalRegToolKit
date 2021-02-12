@@ -177,8 +177,7 @@ def exp_Lothian():
                                   "Royal Infirmary of Edinburgh",
                                   "St. John's Hospital",
                                   "Victoria Hospital Kirkaldy",
-                                  "Western General Hospital",
-                                 ,], index=2)
+                                  "Western General Hospital",], index=2)
 
     if types == "Royal Infirmary of Edinburgh":
         
