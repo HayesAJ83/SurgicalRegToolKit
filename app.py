@@ -190,47 +190,23 @@ def exp_Lothian():
 
 
         mapbox_access_token = 'pk.eyJ1IjoiYWpoYXllczgzIiwiYSI6ImNrY2pqM2lvMDB4Z24ydG8zdDl0NTYwbTUifQ.2DKVfTAaE77XAXMpDeq_Pg'
-        url = 'https://raw.githubusercontent.com/HayesAJ83/SurgicalEps_01/main/Eponyms4python_Lite.csv'
-        df1 = pd.read_csv(url, dtype={'PMID':str,'Year':int})
-        df2 = df1.sort_values(by=['Year'],ascending=True)
-        spec_df = df2['Topic'].dropna()
-        string = spec_df.str.cat(sep=',')
-        splits = string.split(",")
-        S = set(splits)
-        T = np.array(list(S)).astype(object)
-        U = np.sort(T)
-        journal_spec = st.multiselect("2nd) Optional - Select specific specialties. Type in box:",
-             options=list(U), format_func=lambda x: ' ' if x == '1' else x,)
 
-        min_yrs, max_yrs = st.slider("3rd) Optional - define a time window:", 1500, 2050, [1550, 2021])
-        new_geo1 = df2.loc[df2['Topic'].str.contains('|'.join(journal_spec)) == True]
-        new_geo2 = new_geo1.sort_values(by=['Year'],ascending=True)
-        new_geo2T = new_geo2.loc[(new_geo2['Year'] >= min_yrs) & (new_geo2['Year'] <= max_yrs)]
-        site_lat = new_geo2T['Lat_A1']                          
-        site_lon = new_geo2T['Long_A1']           
-        text = new_geo2T['Eponym_easy'] + ', ' + new_geo2T['CityOfEponym_A1'] + ', ' + new_geo2T['Year'].astype(str)
-        locations_name = new_geo2T['Eponym_easy']
-        #st.markdown("---")
-        st.markdown('''<span style="font-size:10pt;color:black;">**Click on a place name to zoom in**,
-                       and in the center to pan out.</span>''', unsafe_allow_html=True)
 
-        new_geo2T["World"] = "World"
-        figJDLT = px.sunburst(new_geo2T,path=['World',
-            'Continent_A1','CountryOfEponym_A1','RegionOfEponym_A1','Eponym_easy'],
-                              color='Log10_GxP',hover_data=['Eponym'],
-                              color_continuous_scale='viridis',)#'RdBu'
-        figJDLT.update_layout(margin=dict(l=0, r=0, t=0, b=10),width=380,height=350)
-        figJDLT.update_traces(hovertemplate='<b>%{label}</b>') 
-        st.write(figJDLT)
+        site_lat = df2['Lat_A1']                          
+        site_lon = df2['Long_A1']           
+        text = df2['Place'].astype(str)
+        locations_name = df2['Place']
+        color= df2['Colour'].astype(str)
+
         st.markdown('''<span style="font-size:10pt;color:black;">**Zoom** into map using **touchscreen**.</span>''', unsafe_allow_html=True)
         figG3 = go.Figure()
         figG3.add_trace(go.Scattermapbox(lat=site_lat,lon=site_lon,mode='markers',
-                marker=go.scattermapbox.Marker(size=5,color='yellow',opacity=0.6),
+                marker=go.scattermapbox.Marker(size=7,color=color,opacity=0.8),
                 text=text,hoverinfo='text',))
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=38,lon=0),
-                pitch=5,zoom=-0.47,style='dark'))
+                pitch=5,zoom=-0.47,style='satellite-streets'))
         figG3.update_layout(margin=dict(l=2, r=2, t=0, b=0))
         st.write(figG3)
 
