@@ -197,7 +197,7 @@ def exp_Lothian():
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.92137,lon=-3.13415),
-                pitch=5,zoom=9.0,style='basic'))
+                pitch=5,zoom=9.5,style='satellite-streets'))
         figG3.update_layout(margin=dict(l=2, r=2, t=0, b=0))
         st.write(figG3)
         st.markdown('''<span style="font-size:10pt;color:black;">**Zoom** into map using **touchscreen**.</span>''', unsafe_allow_html=True)
@@ -211,7 +211,7 @@ def exp_Lothian():
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.59573,lon=-2.74245),
-                pitch=5,zoom=8.0,style='satellite-streets'))
+                pitch=5,zoom=7.0,style='satellite-streets'))
         figG3.update_layout(margin=dict(l=2, r=2, t=0, b=0))
         st.write(figG3)
         st.markdown('''<span style="font-size:10pt;color:black;">**Zoom** into map using **touchscreen**.</span>''', unsafe_allow_html=True)
