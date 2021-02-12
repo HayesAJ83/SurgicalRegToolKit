@@ -199,8 +199,8 @@ def exp_Lothian():
                 text=text,hoverinfo='text',))
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
-                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=38,lon=0),
-                pitch=15,zoom=5.0,style='satellite-streets'))
+                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.92,lon=-3.13),
+                pitch=5,zoom=6.0,style='satellite-streets'))
         figG3.update_layout(margin=dict(l=2, r=2, t=0, b=0))
         st.write(figG3)
 
