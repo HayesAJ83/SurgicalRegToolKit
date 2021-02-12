@@ -184,14 +184,8 @@ def exp_Lothian():
         url = 'https://raw.githubusercontent.com/HayesAJ83/SurgicalRegToolKit/main/Lothian4python_Lite.csv'
         df1 = pd.read_csv(url, dtype={'PMID':str,'Year':int})
         df2 = df1.sort_values(by=['Place'],ascending=True)
-        st.write(df2)
-
-
-
-
+        #st.write(df2)
         mapbox_access_token = 'pk.eyJ1IjoiYWpoYXllczgzIiwiYSI6ImNrY2pqM2lvMDB4Z24ydG8zdDl0NTYwbTUifQ.2DKVfTAaE77XAXMpDeq_Pg'
-
-
         site_lat = df2['Lat_A1']                          
         site_lon = df2['Long_A1']           
         text = df2['Place'].astype(str)
@@ -206,7 +200,7 @@ def exp_Lothian():
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=38,lon=0),
-                pitch=5,zoom=-0.47,style='satellite-streets'))
+                pitch=15,zoom=5.0,style='satellite-streets'))
         figG3.update_layout(margin=dict(l=2, r=2, t=0, b=0))
         st.write(figG3)
 
