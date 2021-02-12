@@ -134,8 +134,7 @@ def exp_about():
     st.write('''We designed this App to help visiting Fellows settle into the local Department of surgery and
                 living in Edinburgh.''')
     st.title('How to use this App?')
-    st.write('Select from options above to access different types of helpful information.
-             'Below is a summary of the different options.')
+    st.write('Select from options above to access different types of helpful information. Below is a summary of the different options.')
     st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Regional Hospitals:</span>
                    <span style="font-size:12pt;color:black;"> Maps and info from NHS Lothian and neighboring health boards
                    (eg. Fife, Borders, Forth Valley).</span>''',unsafe_allow_html=True)
