@@ -41,7 +41,7 @@ def main():
                              "Excision Ltd Team",])
 
     if page ==   "Registrar Toolkit":       show_explore()
-    elif page == "Excision Ltd Team":                   show_the_app_team()
+    elif page == "Excision Ltd Team":       show_the_app_team()
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
@@ -97,8 +97,8 @@ def show_the_app_team():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def show_explore():
-    st.markdown('''# General Surgical Registrar ToolKit''')
     st.write('''_UNDER CONSTRUCTION_''')
+    st.markdown('''# General Surgical Registrar ToolKit''')
     exp = st.radio('Go to',
                                 ["About this App",
                                  "Lothian Hospitals",
@@ -110,6 +110,8 @@ def show_explore():
                                  "Useful info for outside work",
                                  "Tips & tricks from previous fellows",
                                  ])
+    st.sidebar.markdown("---")
+    
     if   exp == "About this App":                       exp_about()             #1
     elif exp == "Lothian Hospitals":                    exp_Lothian()           #2
     elif exp == "UGI / General Surgery Dept":           exp_UGI()               #3
@@ -127,16 +129,10 @@ def show_explore():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def exp_about():
-
 #Page
-    st.write('''_UNDER CONSTRUCTION_''')
-    
-    st.markdown('''_A Web App from Excision Ltd_''')
-    st.subheader('Introduction')
-    st.markdown(' ')
-    #st.markdown('''<br><span style="font-size:14pt;font-weight:bold;color:black;text-decoration:
-                   #underline;">Introduction</span>''', unsafe_allow_html=True)
-    st.write('''About.''')
+    st.subheader('Who Is This App For?')
+    st.write('''We designed this App to help visiting Fellows settle into the local Department of surgery and
+                living in Edinburgh.''')
     st.subheader('Using This App')
     st.write(' ')
     st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Lothian Hospitals:</span>
@@ -158,14 +154,9 @@ def exp_about():
     st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Tips & tricks:</span>
                    <span style="font-size:12pt;color:black;">Barbora, Gustav, Adam, Maria, Matteo and others.</span>''',unsafe_allow_html=True)
 
-    st.subheader('Who Is This App For?')
-    st.markdown(' ')
-    st.write('''Registrars.''')
-    st.subheader('Disclaimer')
-    st.markdown(' ')
-    st.write('''Educational purposes.''')
-    st.sidebar.markdown('''**Latest News**''')
-    st.sidebar.info("App will be launched March 2021")
+
+    st.sidebar.markdown('''**Contribute Please**''')
+    st.sidebar.info("Contact Maria Boland or Alastair Hayes to update any useful info.")
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
