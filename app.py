@@ -166,6 +166,7 @@ def exp_about():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def exp_Lothian():
+    st.sidebar.markdown("---")
     st.markdown('''### Regional Hospitals''')
     types = st.radio('Hospital:',["Royal Infirmary of Edinburgh",
                                   "St. John's Hospital",
@@ -182,7 +183,7 @@ def exp_Lothian():
 
 
 
-st.markdown("""<style type="text/css" media="screen">div[role="listbox"] ul {height:100px}</style>""",unsafe_allow_html=True,)
+        st.markdown("""<style type="text/css" media="screen">div[role="listbox"] ul {height:100px}</style>""",unsafe_allow_html=True,)
         mapbox_access_token = 'pk.eyJ1IjoiYWpoYXllczgzIiwiYSI6ImNrY2pqM2lvMDB4Z24ydG8zdDl0NTYwbTUifQ.2DKVfTAaE77XAXMpDeq_Pg'
         url = 'https://raw.githubusercontent.com/HayesAJ83/SurgicalEps_01/main/Eponyms4python_Lite.csv'
         df1 = pd.read_csv(url, dtype={'PMID':str,'Year':int})
@@ -236,6 +237,7 @@ st.markdown("""<style type="text/css" media="screen">div[role="listbox"] ul {hei
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def exp_UGI():
+    st.sidebar.markdown("---")
     st.subheader("The UGI / General Surgery Dept") 
     
 
@@ -246,6 +248,7 @@ def exp_UGI():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def exp_ET():
+    st.sidebar.markdown("---")
     #st.markdown('''[Advert space for Google AdSense4]''')
     st.subheader("Emergency Take") 
     ScreenSize = st.radio('1st) Select screen size:',
@@ -260,6 +263,7 @@ def exp_ET():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def exp_Elective():
+    st.sidebar.markdown("---")
     
     st.subheader("Elective - UGI / General Surgery") 
    
@@ -272,6 +276,7 @@ def exp_Elective():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def exp_Rotas():
+    st.sidebar.markdown("---")
     st.subheader("Rotas - Link to latest version - upload into Github") 
    
 
@@ -285,7 +290,8 @@ def exp_Rotas():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def exp_InWork():
-    st.markdown('''### Helpful info for in work''')
+    st.sidebar.markdown("---")
+    st.markdown('''### Helpful info for at work''')
     ScreenSize = st.radio('1st) Select screen size:',
                      options=['Smartphone',
                               'Desktop / Laptop / Tablet',],index=0)
@@ -300,7 +306,8 @@ def exp_InWork():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def exp_OutWork():
-    st.subheader("Helpful info for Outside Work")
+    st.sidebar.markdown("---")
+    st.subheader("Helpful info for Edinburgh Life")
     exp = st.radio('1st) Choose your setting:',#'Select',
                                 ['Leisure',        # - Scars, Signs, Diseases & Severity Scores",
                                  'Medical Care',   # - History of Surgery',
@@ -325,6 +332,7 @@ def exp_OutWork():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def exp_Tips():
+    st.sidebar.markdown("---")
     st.subheader("Tips from our previous fellows")
     exp = st.radio('Topics:',#'Select',
                                 ['Things I wish someone had told me',        # - ,
