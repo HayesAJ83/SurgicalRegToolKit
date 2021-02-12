@@ -199,10 +199,36 @@ def exp_Lothian():
                 text=text,hoverinfo='text',))
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
-                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.92,lon=-3.13),
+                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.92137,lon=-3.13415),
+                pitch=5,zoom=8.0,style='satellite-streets'))
+        figG3.update_layout(margin=dict(l=2, r=2, t=0, b=0))
+        st.write(figG3)
+
+    if types == "Borders General Hospital":
+        
+        url = 'https://raw.githubusercontent.com/HayesAJ83/SurgicalRegToolKit/main/Lothian4python_Lite.csv'
+        df1 = pd.read_csv(url, dtype={'PMID':str,'Year':int})
+        df2 = df1.sort_values(by=['Place'],ascending=True)
+        #st.write(df2)
+        mapbox_access_token = 'pk.eyJ1IjoiYWpoYXllczgzIiwiYSI6ImNrY2pqM2lvMDB4Z24ydG8zdDl0NTYwbTUifQ.2DKVfTAaE77XAXMpDeq_Pg'
+        site_lat = df2['Lat_A1']                          
+        site_lon = df2['Long_A1']           
+        text = df2['Place'].astype(str)
+        locations_name = df2['Place']
+        color= df2['Colour'].astype(str)
+
+        st.markdown('''<span style="font-size:10pt;color:black;">**Zoom** into map using **touchscreen**.</span>''', unsafe_allow_html=True)
+        figG3 = go.Figure()
+        figG3.add_trace(go.Scattermapbox(lat=site_lat,lon=site_lon,mode='markers',
+                marker=go.scattermapbox.Marker(size=7,color=color,opacity=0.8),
+                text=text,hoverinfo='text',))
+        figG3.update_layout(
+                autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
+                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.59573,lon=-2.74245),
                 pitch=5,zoom=6.0,style='satellite-streets'))
         figG3.update_layout(margin=dict(l=2, r=2, t=0, b=0))
         st.write(figG3)
+
 
     
 #-------------------------------------------------------------------------------------------------#
