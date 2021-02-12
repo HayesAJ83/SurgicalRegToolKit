@@ -36,7 +36,7 @@ import requests
 
 def main():    
     st.sidebar.subheader('Navigator')
-    page = st.sidebar.radio('',#'Go to',
+    page = st.sidebar.radio('Go to',
                             ["Gen Surgery Registrar Toolkit",
                              "Excision Ltd Team",])
 
@@ -97,8 +97,8 @@ def show_the_app_team():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def show_explore():
-    st.sidebar.subheader('Toolkit')
-    exp = st.sidebar.radio('Go to',
+    st.subheader('Toolkit')
+    exp = st.radio('Go to',
                                 ["About this App",
                                  "Lothian Hospitals",
                                  "UGI / General Surgery Dept",
