@@ -113,7 +113,7 @@ def show_explore():
     
     if   exp == "About":                                exp_about()             #1
     elif exp == "Regional Hospitals":                   exp_Lothian()           #2
-    elif exp == "UGI / Gen Surg Dept at RIE":           exp_UGI()               #3
+    elif exp == "UGI / General Surgery Dept at RIE":    exp_UGI()               #3
     elif exp == "Emergency Teams (ET1/ET2)":            exp_ET()                #4
     elif exp == "Elective Work":                        exp_Elective()          #5
     elif exp == "Reg Rota":                             exp_Rotas()             #6
@@ -168,7 +168,7 @@ def exp_about():
 def exp_Lothian():
     st.markdown("---")
     st.subheader('''Regional Hospitals''')
-    st.write(' ')
+    #st.write(' ')
     url = 'https://raw.githubusercontent.com/HayesAJ83/SurgicalRegToolKit/main/Lothian4python_Lite.csv'
     df1 = pd.read_csv(url, dtype={'PMID':str,'Year':int})
     df2 = df1.sort_values(by=['Place'],ascending=True)
@@ -179,7 +179,7 @@ def exp_Lothian():
     locations_name = df2['Place']
     color= df2['Colour'].astype(str)
 
-    types = st.selectbox('Hospitals:',
+    types = st.selectbox('Select hospital:',
                      options=["Astley Ainslie Hospital",
                               "Borders General Hospital - BGH",
                               "Forth Valley Hospital",
@@ -263,7 +263,8 @@ def exp_Lothian():
 #-------------------------------------------------------------------------------------------------#
 def exp_UGI():
     st.markdown("---")
-    st.subheader("The UGI / General Surgery Dept") 
+    st.subheader("The UGI / General Surgery Dept")
+    st.write('How the department currently functions - the ever-adapting machine')
     
 
 #-------------------------------------------------------------------------------------------------#
@@ -274,10 +275,9 @@ def exp_UGI():
 #-------------------------------------------------------------------------------------------------#
 def exp_ET():
     st.markdown("---")
-    #st.markdown('''[Advert space for Google AdSense4]''')
-    st.subheader("Emergency Take") 
-    ScreenSize = st.radio('1st) Select screen size:',
-                          options=['Desktop / Laptop / Tablet'],index=0)
+    st.subheader("Emergency Team") 
+    ET = st.selectbox('Select component:',
+                          options=['ET1', 'Hot clinic', 'CEPOD', 'ET2', ],index=0)
 
   
 
