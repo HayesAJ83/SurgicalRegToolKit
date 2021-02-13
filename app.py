@@ -109,9 +109,7 @@ def show_explore():
                                  "Emergency Teams (ET1/ET2)",
                                  "Elective Work",
                                  "Shifts & Rotas",
-                                 "Useful info at work",
-                                 "Useful info for Edinburgh",
-                                 "Tips from ex-Fellows",
+                                 "Useful Information",
                                  ])
     
     if   exp == "About":                                exp_about()             #1
@@ -120,7 +118,7 @@ def show_explore():
     elif exp == "Emergency Teams (ET1/ET2)":            exp_ET()                #4
     elif exp == "Elective Work":                        exp_Elective()          #5
     elif exp == "Shifts & Rotas":                       exp_Rotas()             #6
-    elif exp == "Useful info at work":                  exp_InWork()            #7
+    elif exp == "Useful Information":                   exp_Info()            #7
     elif exp == "Useful info for Edinburgh":            exp_OutWork()           #8
     elif exp == "Tips from ex-Fellows":                 exp_Tips()              #9 
 
@@ -310,7 +308,10 @@ def exp_Elective():
 #-------------------------------------------------------------------------------------------------#
 def exp_Rotas():
     st.markdown("---")
-    st.subheader("Shifts & Rotas - Link to latest version - upload into Github") 
+    st.subheader("Shifts & Rotas - Link to latest version ")
+    st.write('Elective day shifts'
+    st.write('Clinics')
+    
    
 
 
@@ -318,18 +319,19 @@ def exp_Rotas():
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
-#  In Work Info (8)                                                                               #
+#  Useful Information (8)                                                                               #
 # ::: Handles the                                                                                 #                                                                                              #
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
-def exp_InWork():
+def exp_Info():
     st.markdown("---")
     st.markdown('''### Helpful info for at work''')
-    ScreenSize = st.radio('1st) Select screen size:',
-                     options=['Smartphone',
-                              'Desktop / Laptop / Tablet',],index=0)
+    Info = st.radio('Info:',
+                     options=['At Work',
+                              'Outside Work',],index=0)
 
-   
+   if Info == 'At Work':        info_work()
+   if Info == 'Outside Work':   info_ed()
 
 
 #-------------------------------------------------------------------------------------------------#
@@ -338,7 +340,7 @@ def exp_InWork():
 # ::: Handles the                                                                                 #                                                                                              #
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
-def exp_OutWork():
+def info_ed():
     st.markdown("---")
     st.subheader("Helpful info for Edinburgh Life")
     exp = st.radio('1st) Choose your setting:',#'Select',
@@ -363,12 +365,12 @@ def exp_OutWork():
 # ::: Handles the                                                                                 #                                                                                              #
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
-def exp_Tips():
-    st.markdown("---")
-    st.subheader("Tips from our previous fellows")
-    exp = st.radio('Topics:',#'Select',
-                                ['Things I wish someone had told me',        # - ,
-                                 ])
+#def exp_Tips():
+#    st.markdown("---")
+#    st.subheader("Tips from our previous fellows")
+#    exp = st.radio('Topics:',#'Select',
+#                                ['Things I wish someone had told me',        # - ,
+#                                 ])
 
 
 
