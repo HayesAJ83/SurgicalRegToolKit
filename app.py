@@ -189,7 +189,7 @@ def exp_Lothian():
                               "St. John's Hospital - SJH",
                               "Victoria Hospital - VHK",
                               "Western General Hospital - WGH",], index=4)
-    st.markdown("---")
+    
     figG3 = go.Figure()
     figG3.add_trace(go.Scattermapbox(lat=site_lat,lon=site_lon,mode='markers',
                 marker=go.scattermapbox.Marker(size=12,color=color,opacity=0.8),
@@ -249,7 +249,6 @@ def exp_Lothian():
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.9634,lon=-3.23521),
                 pitch=5,zoom=10,style='satellite-streets'))
         
-
 
     figG3.update_layout(margin=dict(l=2, r=2, t=0, b=0))
     st.write(figG3)
