@@ -436,6 +436,10 @@ def info_bleep():
     st.subheader('Emergency Contacts - RIE')
     st.write('''* **23796** extension - Radiology Reg''')
     st.write('''* **2306** bleep - Critical Care Reg''')
+    st.write('''* **1625** bleep - Gynae Reg''')
+    st.write('''* **2117** bleep - GI Medical Reg Daytime''')
+    st.write('''* **4110** bleep - Medical Reg Day''')
+    st.write('''* **4030** bleep - Medical Reg H@N''')
     st.write('''* **07814302880** - Vascular Reg Daytime''')
     st.write('''* **2181** bleep - Orthopaedics Junior Reg''')
     st.write('''* **6868** bleep - Orthopaedics Senior Reg''')
@@ -451,8 +455,9 @@ def info_bleep():
     st.write('''* **8497** bleep - Breast Reg''')
     
     
-    st.subheader('Elective')
-    st.write('''* The elective ward **FY1 bleep** for UGI ward rounds is **4583**. See 'making a bleep' topic above.''')
+    st.subheader('Elective Gen Surg RIE')
+    st.write('''* **4583** bleep - Elective **FY1 bleep** UGI wards''')
+    st.write('''* **4059** bleep - Elective **FY1 bleep** HPB wards''')
 
     
 #-------------------------------------------------------------------------------------------------#
