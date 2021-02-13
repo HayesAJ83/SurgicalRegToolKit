@@ -287,7 +287,7 @@ def in_wards():
     st.write('* This starts at 8:00 am on Mondays, Tuesdays & Thursdays.')
     st.write('* The morning round begins a little later on Wednesdays, after the M&M meeting - approx 08:45 to 09:00 start.')
     st.write('* Starting at W107, we go to W106, and then onto critical care (W116 or W118)')
-    st.write('* There is an FY1 dr on the rounds, their bleep number is xxxx')
+    st.write('* There is an FY1 dr on the rounds, their bleep number is **4583**')
     st.write('* There is an afternoon ward round')
 
 #    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Emergency Teams:</span>
@@ -398,25 +398,55 @@ def exp_Info():
 def info_work():
     st.subheader("RIE tips")
     exp = st.radio('Topics:',#'Select',
-                                ['The wards',                  
+                                ['The Wards',                  
                                  'In the Day Surgery Unit',       
                                  'Operating Theatres',      
                                  'Secretaires',
                                  'Management team details',
+                                 'Making a bleep - and useful numbers',
                                  ])
 
-    if   exp == "The wards":                    info_wards()       #T1 #
-    elif exp == 'In the Day Surgery Unit':      info_dsu()         #T2 #
-    elif exp == "Operating Theatres":           info_th()          #T3 #
-    elif exp == "Secretaries":                  info_secy()
-    elif exp == "Management team":              info_mx()
+    if   exp == "The Wards":                                info_wards()       #T1 #
+    elif exp == 'In the Day Surgery Unit':                  info_dsu()         #T2 #
+    elif exp == "Operating Theatres":                       info_th()          #T3 #
+    elif exp == "Secretaries":                              info_secy()
+    elif exp == "Management team":                          info_mx()
+    elif exp == "Making a bleep - and useful numbers":      info_bleep()
 
 def info_wards():
-    st.write('''* Ward 107: This is where we prefer our elective patients to go who aren't suitable for day surgery or need critical care.''')
-    st.write('''* Ward 106: This is where we prefer our emergency patients to go who can't stay in surgical obervation unit down on the ground floor.''')
-    st.write('''* Ward 105: This is the Vascular surgery ward, occasionally we may have emergency admission patients here.''')
-    st.write('''* Ward 116: This is a high dependency unit ward, refered to as level 2 care, where usually non-intubated patients with complex needs and organ support are cared for. Usual procedures have criteria have changed during pandemic, with some intubated patients being located here.''') 
+    st.markdown("---")
+    st.write('''* The elective ward **FY1 bleep** for UGI ward rounds is **4583**. See 'making a bleep' topic above.''')
+    st.write('''* **Ward 107**: This is where we prefer our elective patients to go who aren't suitable for day surgery or need critical care.''')
+    st.write('''* **Ward 106**: This is where we prefer our emergency patients to go who can't stay in surgical obervation unit down on the ground floor.''')
+    st.write('''* **Ward 116**: This is a high dependency unit, refered to as level 2 care, where usually non-intubated patients with organ support or complex acute issues, including monitored trauma patients, are cared for. Usual admission/discharge criteria have changed during pandemic, with some intubated patients being located here.''')
+    st.write('''* **Ward 118**: This is the intensive therapy unit, refered to as level 3 care, where usually intubated patients are located.''') 
+    st.write('''* **Ward 105**: This is the Vascular Surgical ward, occasionally we may have emergency admission patients here.''')
 
+def info_bleep():
+    st.markdown("---")
+    st.subheader('Emergency Team')
+    st.write('''* General Surgical Registrar Oncall at RIE: **5569 bleep**''')
+    st.write('''* General Surgical ANP or FY2 Oncall at RIE: **2254 bleep**''')
+    st.write('''* General Surgical ANP number: **07747473249**''')
+    st.write('''* CEPOD Theatres co-ordinator phone: **07790826007**''')
+    st.write('''* Anaesthetics Registrar Oncall: **2200 bleep**''')
+
+    st.subheader('Emergency Contacts - RIE')
+    st.write('''* Radiology Registrar Oncall: **tbc**''')
+    st.write('''* Critical Care Registrar Oncall: **is this 2306 bleep?**''')
+    
+    st.write('''* Orthopaedics Registrar Oncall at RIE: **tbc**''')
+    st.write('''* Cardiothoracics Registrar Oncall at RIE: **tbc**''')
+
+
+    st.subheader('Emergency Contacts - WGH')
+    st.write('''* Colorectal Registrar Oncall at WGH: **079 tbc**''')
+    st.write('''* Colorectal FY2 Oncall at WGH: **tbc**''')
+    
+    st.subheader('Elective')
+    st.write('''* The elective ward **FY1 bleep** for UGI ward rounds is **4583**. See 'making a bleep' topic above.''')
+
+    
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
 #  Outside Work (9)                                                                               #
