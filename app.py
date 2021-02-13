@@ -399,18 +399,18 @@ def info_work():
     st.subheader("RIE tips")
     exp = st.radio('Topics:',#'Select',
                                 ['Contact numbers & how to bleep',
-                                 'The Wards',                  
-                                 'In the Day Surgery Unit',       
-                                 'Operating Theatres',      
+                                 'The wards',                  
+                                 'Day surgery unit',       
+                                 'Operating theatres',      
                                  'Secretaires',
                                  'Management team details',
                                  ])
 
-    if   exp == "The Wards":                                info_wards()       #T1 #
-    elif exp == 'In the Day Surgery Unit':                  info_dsu()         #T2 #
-    elif exp == "Operating Theatres":                       info_th()          #T3 #
+    if   exp == "The wards":                                info_wards()       #T1 #
+    elif exp == 'Day surgery unit':                         info_dsu()         #T2 #
+    elif exp == "Operating theatres":                       info_th()          #T3 #
     elif exp == "Secretaries":                              info_secy()
-    elif exp == "Management team":                          info_mx()
+    elif exp == "Management team details":                  info_mx()
     elif exp == "Contact numbers & how to bleep":           info_bleep()
 
 def info_wards():
@@ -424,6 +424,7 @@ def info_wards():
 
 def info_bleep():
     st.markdown("---")
+    st.write('''To make a bleep, pick up the phone and dial **110**, and wait for voice prompt and dial bleep number when prompted (eg. **2200** for anaesthetist oncall). Then, dial the **5-digit** extension number of your hospital phone. Put down the handset and await a phone call.''')
     st.subheader('Our Emergency Team')
     st.write('''* General Surgical Registrar Oncall at RIE: **5569 bleep**''')
     st.write('''* General Surgical ANP or FY2 Oncall at RIE: **2254 bleep**''')
