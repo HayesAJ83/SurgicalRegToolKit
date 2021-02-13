@@ -109,7 +109,7 @@ def show_explore():
                                  "Emergency Teams (ET1/ET2)",
                                  "Elective Work",
                                  "Shifts & Rotas",
-                                 "Useful Information",
+                                 "Useful Info & Contact Numbers",
                                  ])
     
     if   exp == "About":                                exp_about()             #1
@@ -118,7 +118,7 @@ def show_explore():
     elif exp == "Emergency Teams (ET1/ET2)":            exp_ET()                #4
     elif exp == "Elective Work":                        exp_Elective()          #5
     elif exp == "Shifts & Rotas":                       exp_Rotas()             #6
-    elif exp == "Useful Information":                   exp_Info()            #7
+    elif exp == "Useful Info & Contact Numbers":        exp_Info()            #7
     elif exp == "Useful info for Edinburgh":            exp_OutWork()           #8
     elif exp == "Tips from ex-Fellows":                 exp_Tips()              #9 
 
@@ -398,12 +398,12 @@ def exp_Info():
 def info_work():
     st.subheader("RIE tips")
     exp = st.radio('Topics:',#'Select',
-                                ['The Wards',                  
+                                ['Contact numbers & how to bleep',
+                                 'The Wards',                  
                                  'In the Day Surgery Unit',       
                                  'Operating Theatres',      
                                  'Secretaires',
                                  'Management team details',
-                                 'Making a bleep - and useful numbers',
                                  ])
 
     if   exp == "The Wards":                                info_wards()       #T1 #
@@ -411,7 +411,7 @@ def info_work():
     elif exp == "Operating Theatres":                       info_th()          #T3 #
     elif exp == "Secretaries":                              info_secy()
     elif exp == "Management team":                          info_mx()
-    elif exp == "Making a bleep - and useful numbers":      info_bleep()
+    elif exp == "Contact numbers & how to bleep":           info_bleep()
 
 def info_wards():
     st.markdown("---")
@@ -424,7 +424,7 @@ def info_wards():
 
 def info_bleep():
     st.markdown("---")
-    st.subheader('Emergency Team')
+    st.subheader('Our Emergency Team')
     st.write('''* General Surgical Registrar Oncall at RIE: **5569 bleep**''')
     st.write('''* General Surgical ANP or FY2 Oncall at RIE: **2254 bleep**''')
     st.write('''* General Surgical ANP number: **07747473249**''')
