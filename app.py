@@ -102,7 +102,7 @@ def show_explore():
     exp = st.radio('Go to:',
                                 ["About",
                                  "Regional Hospitals",
-                                 "UGI / General Surgery Dept",
+                                 "UGI / General Surgery Dept at RIE",
                                  "Emergency Teams (ET1/ET2)",
                                  "Elective Work",
                                  "Reg Rota",
@@ -113,7 +113,7 @@ def show_explore():
     
     if   exp == "About":                                exp_about()             #1
     elif exp == "Regional Hospitals":                   exp_Lothian()           #2
-    elif exp == "UGI / Gen Surg Dept":                  exp_UGI()               #3
+    elif exp == "UGI / Gen Surg Dept at RIE":           exp_UGI()               #3
     elif exp == "Emergency Teams (ET1/ET2)":            exp_ET()                #4
     elif exp == "Elective Work":                        exp_Elective()          #5
     elif exp == "Reg Rota":                             exp_Rotas()             #6
@@ -181,41 +181,79 @@ def exp_Lothian():
 
     types = st.radio('Hospitals:',
                      options=["Astley Ainslie Hospital",
-                              "Borders General Hospital",
+                              "Borders General Hospital - BGH",
+                              "Forth Valley Hospital",
                               "Royal Edinburgh Hospital",
-                              "Royal Infirmary of Edinburgh",
-                              "St. John's Hospital",
-                              "Victoria Hospital",
-                              "Western General Hospital",], index=3)
-
-    if types == "Royal Infirmary of Edinburgh":
-        st.markdown("---")
-        figG3 = go.Figure()
-        figG3.add_trace(go.Scattermapbox(lat=site_lat,lon=site_lon,mode='markers',
+                              "Royal Infirmary of Edinburgh - RIE",
+                              "Spire Murrayfield",
+                              "St. John's Hospital - SJH",
+                              "Victoria Hospital - VHK",
+                              "Western General Hospital - WGH",], index=3)
+    st.markdown("---")
+    figG3 = go.Figure()
+    figG3.add_trace(go.Scattermapbox(lat=site_lat,lon=site_lon,mode='markers',
                 marker=go.scattermapbox.Marker(size=12,color=color,opacity=0.8),
                 text=text,hoverinfo='text',))
+
+    if types == "Astley Ainslie Hospital":
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
-                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.92137,lon=-3.13415),
-                pitch=5,zoom=9.5,style='satellite-streets'))
-        figG3.update_layout(margin=dict(l=2, r=2, t=0, b=0))
-        st.write(figG3)
-        st.markdown('''<span style="font-size:10pt;color:black;">**Zoom** into map using **touchscreen**.</span>''', unsafe_allow_html=True)
+                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.92982,lon=-3.19899),
+                pitch=5,zoom=7.0,style='satellite-streets'))
 
-    if types == "Borders General Hospital":
-        st.markdown("---")
-        figG3 = go.Figure()
-        figG3.add_trace(go.Scattermapbox(lat=site_lat,lon=site_lon,mode='markers',
-                marker=go.scattermapbox.Marker(size=12,color=color,opacity=0.8),
-                text=text,hoverinfo='text',))
+    if types == "Borders General Hospital - BGH":
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.59573,lon=-2.74245),
                 pitch=5,zoom=7.0,style='satellite-streets'))
-        figG3.update_layout(margin=dict(l=2, r=2, t=0, b=0))
-        st.write(figG3)
-        st.markdown('''<span style="font-size:10pt;color:black;">**Zoom** into map using **touchscreen**.</span>''', unsafe_allow_html=True)
 
+    if types == "Forth Valley Hospital":
+        figG3.update_layout(
+                autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
+                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=56.02526,lon=-3.84879),
+                pitch=5,zoom=7.0,style='satellite-streets'))
+
+    if types == "Royal Edinburgh Hospital":
+        figG3.update_layout(
+                autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
+                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.92760,lon=-3.21384),
+                pitch=5,zoom=9.5,style='satellite-streets'))
+
+    if types == "Royal Infirmary of Edinburgh - RIE":
+        figG3.update_layout(
+                autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
+                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.92137,lon=-3.13415),
+                pitch=5,zoom=9.5,style='satellite-streets'))
+
+    if types == "Spire Murrayfield":
+        figG3.update_layout(
+                autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
+                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.94431,lon=-3.26628),
+                pitch=5,zoom=9.5,style='satellite-streets'))
+
+    if types == "St. John's Hospital - SJH":
+        figG3.update_layout(
+                autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
+                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.89211,lon=-3.52319),
+                pitch=5,zoom=9.5,style='satellite-streets'))
+        
+    if types == "Victoria Hospital - VHK":
+        figG3.update_layout(
+                autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
+                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=56.12519,lon=-3.15814),
+                pitch=5,zoom=9.5,style='satellite-streets'))
+
+    if types == "Western General Hospital - WGH":
+        figG3.update_layout(
+                autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
+                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.9634,lon=-3.23521),
+                pitch=5,zoom=9.5,style='satellite-streets'))
+        
+
+
+    figG3.update_layout(margin=dict(l=2, r=2, t=0, b=0))
+    st.write(figG3)
+    st.markdown('''<span style="font-size:10pt;color:black;">**Zoom** into map using **touchscreen**.</span>''', unsafe_allow_html=True)
 
     
 #-------------------------------------------------------------------------------------------------#
