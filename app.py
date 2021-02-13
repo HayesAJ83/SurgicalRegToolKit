@@ -43,6 +43,9 @@ def main():
     if page ==   "Registrar Toolkit":       show_explore()
     elif page == "Excision Ltd Team":       show_the_app_team()
 
+    st.sidebar.markdown('''**Contribute**''')
+    st.sidebar.info("Contact Maria or Alastair to add useful info.")
+
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
 #  About the team                                                                                 #
@@ -156,9 +159,6 @@ def exp_about():
                    <span style="font-size:12pt;color:black;">Barbora, Gustav, Adam, Maria, Matteo and others.</span>''',unsafe_allow_html=True)
 
 
-    st.sidebar.markdown('''**Contribute**''')
-    st.sidebar.info("Contact Maria Boland or Alastair Hayes to add useful info.")
-
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
 #  Lothian (2)                                                                                    #
@@ -265,7 +265,8 @@ def exp_UGI():
     st.markdown("---")
     st.subheader("The UGI / General Surgery Dept")
     st.write('How the department functions - _The ever-adapting machine_')
-    
+
+
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
@@ -298,7 +299,7 @@ def exp_Elective():
                                    'General Surgery',
                                    'Neck Endocrine',
                                    ],index=1)
-   
+
 
 
 #-------------------------------------------------------------------------------------------------#
@@ -349,11 +350,10 @@ def exp_OutWork():
                                  ])
 
     if   exp == "Leisure":           out_leisure()       #T1 #- Scars, Signs, Severity Scores
-    elif exp == 'Medical Care':      out_medical()   #T2 #- History
-    elif exp == "Child Care":        out_child()        #T3 #- Incisions, Instruments & Operations
+    elif exp == 'Medical Care':      out_medical()       #T2 #- History
+    elif exp == "Child Care":        out_child()         #T3 #- Incisions, Instruments & Operations
     elif exp == "Places of Worship": out_worship()
     elif exp == "Best Bars":         out_bars()
-
 
 
 
