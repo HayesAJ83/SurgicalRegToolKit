@@ -191,7 +191,7 @@ def exp_Lothian():
                               "Western General Hospital - WGH",], index=3)
     st.markdown("---")
     figG3 = go.Figure()
-    figG3.add_trace(go.Scattermapbox(lat=site_lat,lon=site_lon,mode='markers',
+    figG3.add_trace(go.Scattermapbox(lat=site_lat,lon=site_lon,mode='markers+text',
                 marker=go.scattermapbox.Marker(size=12,color=color,opacity=0.8),
                 text=text,hoverinfo='text',))
 
@@ -199,7 +199,7 @@ def exp_Lothian():
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.92982,lon=-3.19899),
-                pitch=5,zoom=7.0,style='satellite-streets'))
+                pitch=5,zoom=9.5,style='satellite-streets'))
 
     if types == "Borders General Hospital - BGH":
         figG3.update_layout(
@@ -229,25 +229,25 @@ def exp_Lothian():
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.94431,lon=-3.26628),
-                pitch=5,zoom=9.5,style='satellite-streets'))
+                pitch=5,zoom=10,style='satellite-streets'))
 
     if types == "St. John's Hospital - SJH":
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.89211,lon=-3.52319),
-                pitch=5,zoom=9.5,style='satellite-streets'))
+                pitch=5,zoom=8.5,style='satellite-streets'))
         
     if types == "Victoria Hospital - VHK":
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=56.12519,lon=-3.15814),
-                pitch=5,zoom=9.5,style='satellite-streets'))
+                pitch=5,zoom=8.5,style='satellite-streets'))
 
     if types == "Western General Hospital - WGH":
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.9634,lon=-3.23521),
-                pitch=5,zoom=9.5,style='satellite-streets'))
+                pitch=5,zoom=10,style='satellite-streets'))
         
 
 
