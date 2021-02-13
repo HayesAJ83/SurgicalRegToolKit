@@ -263,20 +263,35 @@ def exp_UGI():
     st.write('Department Overview')
 
     exp = st.radio('Topics:',#'Select',
-                                ['Wards',                  
+                                ['Ward Rounds',                  
                                  'Day Surgery Unit',       
                                  'Operating Theatres',      
                                  'Secretaires',
                                  'Management team',
+                                 'Morbidity & Mortality Meeting',
                                  ])
 
-    if   exp == "Wards":                in_wards()       #T1 #- Scars, Signs, Severity Scores
-    elif exp == 'Day Surgery Unit':     in_dsu()         #T2 #- History
-    elif exp == "Operating Theatres":   in_th()          #T3 #- Incisions, Instruments & Operations
-    elif exp == "Secretaries":          in_secy()
-    elif exp == "Management team":      in_mx()
+    if   exp == "Ward Rounds":                      in_wards()       #T1 # 
+    elif exp == 'Day Surgery Unit':                 in_dsu()         #T2 #
+    elif exp == "Operating Theatres":               in_th()          #T3 #
+    elif exp == "Secretaries":                      in_secy()
+    elif exp == "Management team":                  in_mx()
+    elif exp == "Morbidity & Mortality Meeting":    in_mm()
 
-    st.write('Wednesday M&M meeting')
+
+
+def in_wards():
+    st.markdown("---")
+    st.write('* The team meets at ward 107 (Base A) to start the round. Ward 107 is on the first floor.')
+    st.write('* The morning ward round is led by registrar and FY1, and normally directly supervised by consultants')
+    st.write('* This starts at 8:00 am on Mondays, Tuesdays & Thursdays.')
+    st.write('* The morning round begins a little later on Wednesdays, after the M&M meeting - approx 08:45 to 09:00 start.')
+    st.write('* Starting at W107, we go to W106, and then onto critical care (W116 or W118)')
+    st.write('* There is an FY1 dr on the rounds, their bleep number is xxxx')
+    st.write('* There is an afternoon ward round')
+
+#    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Emergency Teams:</span>
+#                   <span style="font-size:12pt;color:black;"> How these work.</span>''',unsafe_allow_html=True)
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
@@ -383,32 +398,29 @@ def exp_Info():
 def info_work():
     st.subheader("RIE tips")
     exp = st.radio('Topics:',#'Select',
-                                ['On the wards',                  
+                                ['The wards',                  
                                  'In the Day Surgery Unit',       
                                  'Operating Theatres',      
                                  'Secretaires',
                                  'Management team details',
                                  ])
 
-    if   exp == "On the wards":                 in_wards()       #T1 #
-    elif exp == 'In the Day Surgery Unit':      in_dsu()         #T2 #
-    elif exp == "Operating Theatres":           in_th()          #T3 #
-    elif exp == "Secretaries":                  in_secy()
-    elif exp == "Management team":              in_mx()
+    if   exp == "The wards":                    info_wards()       #T1 #
+    elif exp == 'In the Day Surgery Unit':      info_dsu()         #T2 #
+    elif exp == "Operating Theatres":           info_th()          #T3 #
+    elif exp == "Secretaries":                  info_secy()
+    elif exp == "Management team":              info_mx()
 
-def in_wards():
-    st.write('The team meets at ward 107 (Base A) to start the round.')
-    st.write('This morning ward round is led by registrar and FY1, and normally directly supervised by consultants')
-    st.write('This starts at 8:00 am on Mondays, Tuesdays & Thursdays.')
-    st.write('But a little later on Wednesdays, after the M&M meeting - approx 08:45 to 09:00 start.')
-    st.write('Starting at W107, we go to W106, and then onto critical care (W116 or W118)')
-    st.write('There is an FY1 dr on the rounds, their bleep number is xxxx')
-    st.write('There is an afternoon ward round')
+def info_wards():
+    st.write('''* Ward 107: This is where we prefer our elective patients to go who aren't suitable for day surgery or need critical care.''')
+    st.write('''* Ward 106: This is where we prefer our emergency patients to go who can't stay in surgical obervation unit down on the ground floor.''')
+    st.write('''* Ward 105: This is the Vascular surgery ward, occasionally we may have emergency admission patients here.''')
+    st.write('''* Ward 116: This is a high dependency unit ward, refered to as level 2 care, where usually non-intubated patients with complex needs and organ support are cared for. Usual procedures have criteria have changed during pandemic, with some intubated patients being located here.''') 
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
 #  Outside Work (9)                                                                               #
-# ::: Handles the                                                                                 #                                                                                              #
+# ::: Handles the                                                                                 #                                                                                              
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def info_ed():
