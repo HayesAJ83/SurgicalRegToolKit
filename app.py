@@ -105,7 +105,7 @@ def show_explore():
                                  "UGI / General Surgery Dept at RIE",
                                  "Emergency Teams (ET1/ET2)",
                                  "Elective Work",
-                                 "Reg Rota",
+                                 "Shifts & Rotas",
                                  "Useful info at work",
                                  "Useful info for Edinburgh",
                                  "Tips from ex-Fellows",
@@ -116,7 +116,7 @@ def show_explore():
     elif exp == "UGI / General Surgery Dept at RIE":    exp_UGI()               #3
     elif exp == "Emergency Teams (ET1/ET2)":            exp_ET()                #4
     elif exp == "Elective Work":                        exp_Elective()          #5
-    elif exp == "Reg Rota":                             exp_Rotas()             #6
+    elif exp == "Shifts & Rotas":                       exp_Rotas()             #6
     elif exp == "Useful info at work":                  exp_InWork()            #7
     elif exp == "Useful info for Edinburgh":            exp_OutWork()           #8
     elif exp == "Tips from ex-Fellows":                 exp_Tips()              #9 
@@ -264,7 +264,7 @@ def exp_Lothian():
 def exp_UGI():
     st.markdown("---")
     st.subheader("The UGI / General Surgery Dept")
-    st.write('How the department currently functions - the ever-adapting machine')
+    st.write('How the department functions - _The ever-adapting machine_')
     
 
 #-------------------------------------------------------------------------------------------------#
@@ -276,8 +276,8 @@ def exp_UGI():
 def exp_ET():
     st.markdown("---")
     st.subheader("Emergency Team") 
-    ET = st.selectbox('Select component:',
-                          options=['ET1', 'Hot clinic', 'CEPOD', 'ET2', ],index=0)
+    ET = st.radio('Select component:',
+                          options=['CEPOD - Theatre 17 or 13','ET1','ET2','Hot clinic',],index=1)
 
   
 
@@ -289,8 +289,15 @@ def exp_ET():
 #-------------------------------------------------------------------------------------------------#
 def exp_Elective():
     st.markdown("---")
-    
-    st.subheader("Elective - UGI / General Surgery") 
+    st.subheader("Elective - UGI / General Surgery")
+    Elective = st.radio('Select subspecialty:',
+                          options=['OG Resectional',
+                                   'Bariatrics',
+                                   'Complex Hernia',
+                                   'Benign Hiatal',
+                                   'General Surgery',
+                                   'Neck Endocrine',
+                                   ],index=1)
    
 
 
@@ -302,7 +309,7 @@ def exp_Elective():
 #-------------------------------------------------------------------------------------------------#
 def exp_Rotas():
     st.markdown("---")
-    st.subheader("Rotas - Link to latest version - upload into Github") 
+    st.subheader("Shifts & Rotas - Link to latest version - upload into Github") 
    
 
 
