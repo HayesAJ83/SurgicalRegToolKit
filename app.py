@@ -435,13 +435,14 @@ def info_bleep():
     st.subheader('Emergency Contacts - RIE')
     st.write('''* Radiology Registrar Oncall: **tbc**''')
     st.write('''* Critical Care Registrar Oncall: **is this 2306 bleep?**''')
-    
+    st.write('''* Vascular Registrar Mobile at RIE: **07814302880**''')
     st.write('''* Orthopaedics Registrar Oncall at RIE: **tbc**''')
     st.write('''* Cardiothoracics Registrar Oncall at RIE: **tbc**''')
 
 
     st.subheader('Emergency Contacts - WGH')
-    st.write('''* Colorectal Registrar Oncall at WGH: **079 tbc**''')
+    st.write('''* Colorectal Registrar - 1st Oncall at WGH: **07815492792**''')
+    st.write('''* Colorectal Registrar - 2nd Oncall at WGH: **07814909914**''')
     st.write('''* Colorectal FY2 Oncall at WGH: **tbc**''')
     
     st.subheader('Elective')
