@@ -309,7 +309,7 @@ def exp_Elective():
 def exp_Rotas():
     st.markdown("---")
     st.subheader("Shifts & Rotas - Link to latest version ")
-    st.write('Elective day shifts'
+    st.write('Elective day shifts')
     st.write('Clinics')
     
    
