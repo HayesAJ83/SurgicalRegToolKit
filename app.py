@@ -260,9 +260,23 @@ def exp_Lothian():
 def exp_UGI():
     st.markdown("---")
     st.subheader("The UGI / General Surgery Dept")
-    st.write('How the department functions - _The ever-adapting machine_')
+    st.write('Department Overview')
 
+    exp = st.radio('Topics:',#'Select',
+                                ['Wards',                  
+                                 'Day Surgery Unit',       
+                                 'Operating Theatres',      
+                                 'Secretaires',
+                                 'Management team',
+                                 ])
 
+    if   exp == "Wards":                in_wards()       #T1 #- Scars, Signs, Severity Scores
+    elif exp == 'Day Surgery Unit':     in_dsu()         #T2 #- History
+    elif exp == "Operating Theatres":   in_th()          #T3 #- Incisions, Instruments & Operations
+    elif exp == "Secretaries":          in_secy()
+    elif exp == "Management team":      in_mx()
+
+    st.write('Wednesday M&M meeting')
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
@@ -288,13 +302,41 @@ def exp_Elective():
     st.markdown("---")
     st.subheader("Elective - UGI / General Surgery")
     Elective = st.radio('Select subspecialty:',
-                          options=['OG Resectional',
+                          options=['Oesophagogastric Cancer',
                                    'Bariatrics',
                                    'Complex Hernia',
                                    'Benign Hiatal',
                                    'General Surgery',
                                    'Neck Endocrine',
-                                   ],index=1)
+                                   ],index=0)
+
+    if   Elective == 'Oesophagogastric Cancer': elec_OG()
+    elif Elective == 'Bariatrics':              elec_Bar()
+    elif Elective == 'Complex Hernia':          elec_Hernia() 
+
+
+def elec_OG():
+    st.write('OG Cancer Multi-Disciplinary Meeting')
+    st.write('OG Cancer clinic')
+    st.write('OG Cancer team personel')
+    st.write('OG Cancer Fellow')
+    st.write('OG Cancer Theatre sessions')
+
+
+def elec_Bar():
+    st.write('Bariatrics Multi-Disciplinary Meeting')
+    st.write('Bariatrics clinic')
+    st.write('Bariatrics team personel')
+    st.write('Bariatrics Theatre sessions')
+
+
+def elec_Hernia():
+    st.write('Hernia clinics')
+    st.write('Hernia team personel')
+    st.write('Hernia Fellow')
+    st.write('Hernia Theatre sessions')
+    
+
 
 
 
@@ -323,7 +365,7 @@ def exp_Rotas():
 #-------------------------------------------------------------------------------------------------#
 def exp_Info():
     st.markdown("---")
-    st.markdown('''### Helpful info for work''')
+    st.markdown('''### Useful Information''')
     Info = st.radio('',
                      options=['At Work',
                               'Outside Work',],index=0)
@@ -339,22 +381,29 @@ def exp_Info():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def info_work():
-
+    st.subheader("RIE tips")
     exp = st.radio('Topics:',#'Select',
-                                ['Wards',                  
-                                 'Day Surgery Unit',       
+                                ['On the wards',                  
+                                 'In the Day Surgery Unit',       
                                  'Operating Theatres',      
                                  'Secretaires',
-                                 'Management team',
+                                 'Management team details',
                                  ])
 
-    if   exp == "Wards":                in_wards()       #T1 #- Scars, Signs, Severity Scores
-    elif exp == 'Day Surgery Unit':     in_dsu()       #T2 #- History
-    elif exp == "Operating Theatres":   in_th()         #T3 #- Incisions, Instruments & Operations
-    elif exp == "Secretaries":          in_secy()
-    elif exp == "Management team":      in_mx()
+    if   exp == "On the wards":                 in_wards()       #T1 #
+    elif exp == 'In the Day Surgery Unit':      in_dsu()         #T2 #
+    elif exp == "Operating Theatres":           in_th()          #T3 #
+    elif exp == "Secretaries":                  in_secy()
+    elif exp == "Management team":              in_mx()
 
-
+def in_wards():
+    st.write('The team meets at ward 107 (Base A) to start the round.')
+    st.write('This morning ward round is led by registrar and FY1, and normally directly supervised by consultants')
+    st.write('This starts at 8:00 am on Mondays, Tuesdays & Thursdays.')
+    st.write('But a little later on Wednesdays, after the M&M meeting - approx 08:45 to 09:00 start.')
+    st.write('Starting at W107, we go to W106, and then onto critical care (W116 or W118)')
+    st.write('There is an FY1 dr on the rounds, their bleep number is xxxx')
+    st.write('There is an afternoon ward round')
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
@@ -363,14 +412,13 @@ def info_work():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def info_ed():
-    st.markdown("---")
-    st.subheader("Helpful info for Edinburgh Life")
+    st.subheader("Edinburgh Life")
     exp = st.radio('Select:',
                                 ['Leisure',        # -
                                  'Medical Care',   # -
                                  'Child Care',     # -
                                  'Places of Worship',
-                                 'Best Bars'
+                                 'Best Bars',
                                  ])
 
     if   exp == "Leisure":           out_leisure()       #T1 #- 
