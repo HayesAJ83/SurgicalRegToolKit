@@ -150,12 +150,10 @@ def exp_about():
                    <span style="font-size:12pt;color:black;"> How these work.</span>''',unsafe_allow_html=True)
     st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Useful info for work:</span>
                    <span style="font-size:12pt;color:black;"> Summary.</span>''',unsafe_allow_html=True)
-    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Useful info for outside work:</span>
+    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Useful Information:</span>
                    <span style="font-size:12pt;color:black;"> GPs, School, Sports, Bars, Restaurants, Churches/Worship, Nightclubs, Guitar shops, Food shops, Renting.</span>''',unsafe_allow_html=True)
 
-    st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Tips & tricks:</span>
-                   <span style="font-size:12pt;color:black;">Barbora, Gustav, Adam, Maria, Matteo and others.</span>''',unsafe_allow_html=True)
-
+    
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
@@ -325,13 +323,37 @@ def exp_Rotas():
 #-------------------------------------------------------------------------------------------------#
 def exp_Info():
     st.markdown("---")
-    st.markdown('''### Helpful info for at work''')
-    Info = st.radio('Info:',
+    st.markdown('''### Helpful info for work''')
+    Info = st.radio('',
                      options=['At Work',
                               'Outside Work',],index=0)
 
-   if Info == 'At Work':        info_work()
-   if Info == 'Outside Work':   info_ed()
+    if Info == 'At Work':        info_work()
+    elif Info == 'Outside Work':   info_ed()
+
+
+#-------------------------------------------------------------------------------------------------#
+#                                                                                                 #
+#  Outside Work (9)                                                                               #
+# ::: Handles the                                                                                 #                                                                                              #
+#                                                                                                 #
+#-------------------------------------------------------------------------------------------------#
+def info_work():
+
+    exp = st.radio('Topics:',#'Select',
+                                ['Wards',                  
+                                 'Day Surgery Unit',       
+                                 'Operating Theatres',      
+                                 'Secretaires',
+                                 'Management team',
+                                 ])
+
+    if   exp == "Wards":                in_wards()       #T1 #- Scars, Signs, Severity Scores
+    elif exp == 'Day Surgery Unit':     in_dsu()       #T2 #- History
+    elif exp == "Operating Theatres":   in_th()         #T3 #- Incisions, Instruments & Operations
+    elif exp == "Secretaries":          in_secy()
+    elif exp == "Management team":      in_mx()
+
 
 
 #-------------------------------------------------------------------------------------------------#
@@ -343,17 +365,17 @@ def exp_Info():
 def info_ed():
     st.markdown("---")
     st.subheader("Helpful info for Edinburgh Life")
-    exp = st.radio('1st) Choose your setting:',#'Select',
-                                ['Leisure',        # - Scars, Signs, Diseases & Severity Scores",
-                                 'Medical Care',   # - History of Surgery',
-                                 'Child Care',     #- Incisions
+    exp = st.radio('Select:',
+                                ['Leisure',        # -
+                                 'Medical Care',   # -
+                                 'Child Care',     # -
                                  'Places of Worship',
                                  'Best Bars'
                                  ])
 
-    if   exp == "Leisure":           out_leisure()       #T1 #- Scars, Signs, Severity Scores
-    elif exp == 'Medical Care':      out_medical()       #T2 #- History
-    elif exp == "Child Care":        out_child()         #T3 #- Incisions, Instruments & Operations
+    if   exp == "Leisure":           out_leisure()       #T1 #- 
+    elif exp == 'Medical Care':      out_medical()       #T2 #-
+    elif exp == "Child Care":        out_child()         #T3 #-
     elif exp == "Places of Worship": out_worship()
     elif exp == "Best Bars":         out_bars()
 
@@ -372,6 +394,8 @@ def info_ed():
 #                                ['Things I wish someone had told me',        # - ,
 #                                 ])
 
+#st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Tips & tricks:</span>
+#                   <span style="font-size:12pt;color:black;">Barbora, Gustav, Adam, Maria, Matteo and others.</span>''',unsafe_allow_html=True)
 
 
 #-------------------------------------------------------------------------------------------#
