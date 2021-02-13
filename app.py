@@ -179,7 +179,7 @@ def exp_Lothian():
     locations_name = df2['Place']
     color= df2['Colour'].astype(str)
 
-    types = st.radio('Hospitals:',
+    types = st.selectbox('Hospitals:',
                      options=["Astley Ainslie Hospital",
                               "Borders General Hospital - BGH",
                               "Forth Valley Hospital",
@@ -188,7 +188,7 @@ def exp_Lothian():
                               "Spire Murrayfield",
                               "St. John's Hospital - SJH",
                               "Victoria Hospital - VHK",
-                              "Western General Hospital - WGH",], index=3)
+                              "Western General Hospital - WGH",], index=4)
     st.markdown("---")
     figG3 = go.Figure()
     figG3.add_trace(go.Scattermapbox(lat=site_lat,lon=site_lon,mode='markers',
