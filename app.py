@@ -118,7 +118,7 @@ def show_explore():
     elif exp == "UGI / General Surgery Dept at RIE":    exp_UGI()               #3
     elif exp == "Emergency Teams (ET1/ET2)":            exp_ET()                #4
     elif exp == "Elective Work":                        exp_Elective()          #5
-    elif exp == "Dictation Help"                        exp_opnote()            #6
+    elif exp == "Dictation Help":                       exp_opnote()            #6
     elif exp == "Shifts & Rotas":                       exp_Rotas()             #7
     elif exp == "Useful Info & Contact Numbers":        exp_Info()              #8
 
