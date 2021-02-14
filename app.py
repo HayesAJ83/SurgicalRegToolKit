@@ -362,7 +362,7 @@ def elec_Hernia():
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
-#  Dictation (6)                                                                                      #
+#  Dictation (6)                                                                                  #
 # ::: Handles the                                                                                 #                                                                                              #
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
@@ -430,7 +430,7 @@ def info_work():
 
 def info_wards():
     st.markdown("---")
-    st.write('''* The elective ward **FY1 bleep** for UGI ward rounds is **4583**. See 'making a bleep' topic above.''')
+    st.write('''* The elective ward **FY1 bleep** for UGI ward rounds is **4583**. See 'how to bleep' above.''')
     st.write('''* **Ward 107**: This is where we prefer our elective patients to go who aren't suitable for day surgery or need critical care.''')
     st.write('''* **Ward 106**: This is where we prefer our emergency patients to go who can't stay in surgical obervation unit down on the ground floor.''')
     st.write('''* **Ward 116**: This is a high dependency unit, refered to as level 2 care, where usually non-intubated patients with organ support or complex acute issues, including monitored trauma patients, are cared for. Usual admission/discharge criteria have changed during pandemic, with some intubated patients being located here.''')
