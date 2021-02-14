@@ -108,19 +108,20 @@ def show_explore():
                                  "UGI / General Surgery Dept at RIE",
                                  "Emergency Teams (ET1/ET2)",
                                  "Elective Work",
+                                 "Dictation Help",
                                  "Shifts & Rotas",
                                  "Useful Info & Contact Numbers",
                                  ])
     
     if   exp == "About":                                exp_about()             #1
-    elif exp == "Regional Hospitals":                   exp_Lothian()           #2
+    elif exp == "Regional Hospitals":                   exp_hosp()              #2
     elif exp == "UGI / General Surgery Dept at RIE":    exp_UGI()               #3
     elif exp == "Emergency Teams (ET1/ET2)":            exp_ET()                #4
     elif exp == "Elective Work":                        exp_Elective()          #5
-    elif exp == "Shifts & Rotas":                       exp_Rotas()             #6
-    elif exp == "Useful Info & Contact Numbers":        exp_Info()            #7
-    elif exp == "Useful info for Edinburgh":            exp_OutWork()           #8
-    elif exp == "Tips from ex-Fellows":                 exp_Tips()              #9 
+    elif exp == "Dictation Help"                        exp_opnote()            #6
+    elif exp == "Shifts & Rotas":                       exp_Rotas()             #7
+    elif exp == "Useful Info & Contact Numbers":        exp_Info()              #8
+
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
@@ -161,7 +162,7 @@ def exp_about():
 # ::: Handles the                                                                                 #                                                                                              #
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
-def exp_Lothian():
+def exp_hosp():
     st.markdown("---")
     st.subheader('''Regional Hospitals''')
     #st.write(' ')
@@ -353,11 +354,23 @@ def elec_Hernia():
     
 
 
+#-------------------------------------------------------------------------------------------------#
+#                                                                                                 #
+#  Dictation (6)                                                                                      #
+# ::: Handles the                                                                                 #                                                                                              #
+#                                                                                                 #
+#-------------------------------------------------------------------------------------------------#
+def exp_opnote():
+    st.markdown("---")
+    st.subheader("Dictation Help")
+    st.write('Operative steps for main operations')
+
+    
 
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
-#  Rotas (6)                                                                                      #
+#  Rotas (7)                                                                                      #
 # ::: Handles the                                                                                 #                                                                                              #
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
@@ -374,7 +387,7 @@ def exp_Rotas():
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
-#  Useful Information (8)                                                                               #
+#  Useful Information (8)                                                                         #
 # ::: Handles the                                                                                 #                                                                                              #
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
@@ -389,12 +402,6 @@ def exp_Info():
     elif Info == 'Outside Work':   info_ed()
 
 
-#-------------------------------------------------------------------------------------------------#
-#                                                                                                 #
-#  Outside Work (9)                                                                               #
-# ::: Handles the                                                                                 #                                                                                              #
-#                                                                                                 #
-#-------------------------------------------------------------------------------------------------#
 def info_work():
     st.subheader("RIE tips")
     exp = st.radio('Topics:',#'Select',
