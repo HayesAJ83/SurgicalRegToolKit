@@ -122,6 +122,12 @@ def show_explore():
     elif exp == "Shifts & Rotas":                       exp_Rotas()             #7
     elif exp == "Useful Info & Contact Numbers":        exp_Info()              #8
 
+    st.markdown("---")
+    st.subheader('Disclaimer')
+    st.write('''Educational purposes.''')
+    st.markdown("---")
+    st.subheader('Copyright')
+    st.write('''©2021 Excision Limited. All rights reseved.''')
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
@@ -408,7 +414,8 @@ def info_work():
                                 ['Contact numbers & how to bleep',
                                  'The wards',                  
                                  'Day surgery unit',       
-                                 'Operating theatres',      
+                                 'Operating theatres',
+                                 'LSA codes',
                                  'Secretaires',
                                  'Management team details',
                                  ])
@@ -416,6 +423,7 @@ def info_work():
     if   exp == "The wards":                                info_wards()       #T1 #
     elif exp == 'Day surgery unit':                         info_dsu()         #T2 #
     elif exp == "Operating theatres":                       info_th()          #T3 #
+    elif exp == "LSA codes":                                info_lsa()
     elif exp == "Secretaries":                              info_secy()
     elif exp == "Management team details":                  info_mx()
     elif exp == "Contact numbers & how to bleep":           info_bleep()
