@@ -322,6 +322,7 @@ def exp_ET():
 #-------------------------------------------------------------------------------------------------#
 def exp_Elective():
     st.markdown("---")
+    st.markdown('''Note: To access elective theatre lists, use the C-drive (requires access to secure folder)''')
     st.subheader("Elective - UGI / General Surgery")
     Elective = st.radio('Select subspecialty:',
                           options=['Oesophagogastric Cancer',
@@ -369,45 +370,101 @@ def elec_Hernia():
 def exp_opnote():
     st.markdown("---")
     st.subheader("LSA codes")
-    with st.beta_expander('Show popular codes'):
+    st.markdown('''Our department use Lothian Surgical Audit (LSA) codes to categorise our activity.
+                    The LSA code is a 6-digit code. The first 2-digits relate to an organ, a system
+                    or another factor such as a 'complication'. For instance, '10' stands for gallbladder.
+                    The second double digit refers to the problem at hand, usually pathology. A '05' after
+                    the gallbladder code relates to acute cholecystis. The last double digit is the
+                    intervention, such as operation or endoscopy, or no operation ('99'). For instance
+                    no operation for acute cholecystitis would be code '100599' ''')
+    with st.beta_expander('Show Favourites [Click Here]'):
         st.write('APPENDIX')
         st.write('* **060104** Lap Appendicectomy')
+        st.write('* **0601xx** Lap to Open Appendicectomy')
         st.text(".")
         st.write('GALLBLADDER')
+        st.write('* **100324** Lap Cholecystectomy - Chronic Cholecystitis')
         st.write('* **100524** Lap Cholecystectomy - Acute Cholecystitis')
         st.write('* **100599** No operation - Acute Cholecystitis')
         st.text(".")
-    with st.beta_expander('Show all codes'):
+    with st.beta_expander('Show All [Click Here]'):
         LSA = st.radio('LSA:',
-                          options=['Oesophagus',
-                                   'Stomach',
-                                   'Small bowel',
-                                   'Gallbladder',
-                                   'Pancreas',
-                                   'Parathyroid',
+                          options=['01 - Oesophagus',
+                                   '02 - Stomach',
+                                   '05 - Small bowel',
+                                   '06 - Appendix',
+                                   '09 - Hernia',
+                                   '10 - Gallbladder',
+                                   '11 - Pancreas',
+                                   '27 - Parathyroid',
                                    ],index=0)
                             
-        if LSA == 'Oesophagus':
+        if LSA == '01 - Oesophagus':
             st.write('01 - OESOPHAGUS')
             st.write('* **010199** tbc')
+
+        if LSA == '05 - Small bowel':
+            st.write('01 - SMALL BOWEL')
+
+
+        if LSA == '09 - Hernia':
+            st.write('09 - HERNIA')
+
+        if LSA == '06 - Appendix':
+            st.write('06 - APPENDIX')
+            st.write('* **060104** Lap Appendicectomy')
+            st.write('* **060501** ?normal appendix')
             
-        if LSA == 'Gallbladder':
+            
+        if LSA == '10 - Gallbladder':
             st.write('10 - GALLBLADDER')
             st.write('* **100524** Lap Cholecystectomy - Acute Cholecystitis')
             st.write('* **100599** No operation - Acute Cholecystitis')
+
+        if LSA == '11 - Pancreas':
+            st.write('10 - PANCREAS')
+
+        if LSA == '27 - Parathyroid':
+            st.write('27 - PARATHYROID')
+            st.write('* **270201** Excision of single parathyroid gland')
         
     st.markdown("---")
     st.subheader("Dictation")
-    st.markdown('''Not all Fellows have English as a first language, and General Surgery at RIE surprisingly
-                    still uses dictation technology from last centuary! Find here operative steps for
-                    frequenct operations we hope will help you dictate efficienctly. Suggestions for change welcome.''')
-    with st.beta_expander('Show operations'):
+    st.markdown('''Our department use tape dictation to record operation notes which can be challenging for those who are more used to typing their notes, and when English is not their primary language.
+                    Here you will find operative steps for common operations which we hope will help. Suggestions for change welcome.''')
+    with st.beta_expander('Show key operation steps [Click Here]'):
         Ops = st.radio('Operations:',
                           options=['Lap Appendicectomy',
                                    'Lap Cholecystectomy',
-                                   'ILOG',
+                                   'Ivor Lewis Oesophagectomy',
                                    ],index=0)
-    st.write('Operative steps for main operations')
+
+        if Ops == 'Lap Appendicectomy':
+            st.markdown("---")
+            st.markdown('''This operation was a **Laparoscopic Appendicectomy**''')
+            st.markdown('''**LSA code is 060104**''')
+            st.markdown('''Patient's **Name** is .....''')
+            st.markdown('''Operation **Date** was .....''')
+            st.markdown('''Patient's **CHI number** is .....''')
+            st.markdown('''**Theatre** number was .....''')
+            st.markdown('''Patient's **Consultant** was .....''')
+            st.markdown('''**Operating Surgeons** were .....''')
+            st.markdown('''Surgical **Assistant** was ..... (if applicable)''')
+            st.markdown('''**Anaethetist** was ..... (if you know)''')
+            st.markdown('''**Indication** was .....''')
+            st.markdown('''**Findings**: At laparoscopy simple appendicitis with no pus or perforation was seen.
+                            Negative findings were a normal small bowel, no Meckel's, large bowel, pelvic organs, pouch of Douglas, gallbladder.''')
+            st.markdown('''The operation note is as follows:''')
+            st.markdown('''* **WHO check list** done.''')
+            st.markdown('''* The patient **positioned** supine.''')
+            st.markdown('''* Patient's skin was **prepared & draped** in the usual fashion.''')
+            st.markdown('''* Open umbilical **laparoscopic access** was uneventful, using 12-millimeter port, CO2 insufflation and scope.''')
+            
+            
+            
+            
+            
+
 
     
 
