@@ -368,7 +368,45 @@ def elec_Hernia():
 #-------------------------------------------------------------------------------------------------#
 def exp_opnote():
     st.markdown("---")
-    st.subheader("Dictation Help")
+    st.subheader("LSA codes")
+    with st.beta_expander('Show popular codes'):
+        st.write('APPENDIX')
+        st.write('* **060104** Lap Appendicectomy')
+        st.text(".")
+        st.write('GALLBLADDER')
+        st.write('* **100524** Lap Cholecystectomy - Acute Cholecystitis')
+        st.write('* **100599** No operation - Acute Cholecystitis')
+        st.text(".")
+    with st.beta_expander('Show all codes'):
+        LSA = st.radio('LSA:',
+                          options=['Oesophagus',
+                                   'Stomach',
+                                   'Small bowel',
+                                   'Gallbladder',
+                                   'Pancreas',
+                                   'Parathyroid',
+                                   ],index=0)
+                            
+        if LSA == 'Oesophagus':
+            st.write('01 - OESOPHAGUS')
+            st.write('* **010199** tbc')
+            
+        if LSA == 'Gallbladder':
+            st.write('10 - GALLBLADDER')
+            st.write('* **100524** Lap Cholecystectomy - Acute Cholecystitis')
+            st.write('* **100599** No operation - Acute Cholecystitis')
+        
+    st.markdown("---")
+    st.subheader("Dictation")
+    st.markdown('''Not all Fellows have English as a first language, and General Surgery at RIE surprisingly
+                    still uses dictation technology from last centuary! Find here operative steps for
+                    frequenct operations we hope will help you dictate efficienctly. Suggestions for change welcome.''')
+    with st.beta_expander('Show operations'):
+        Ops = st.radio('Operations:',
+                          options=['Lap Appendicectomy',
+                                   'Lap Cholecystectomy',
+                                   'ILOG',
+                                   ],index=0)
     st.write('Operative steps for main operations')
 
     
