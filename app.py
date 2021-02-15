@@ -139,8 +139,8 @@ def exp_about():
 #Page
     st.markdown("---")
     st.subheader('Who is this App for?')
-    st.write('''We designed this App to help visiting Fellows settle into the local Department of surgery and
-                living in Edinburgh.''')
+    st.write('''We designed this App to help visiting Fellows settle into the local Department of
+                surgery and Edinburgh life.''')
     st.subheader('How to use this App?')
     st.write('Select from options above to access different types of helpful information. Below is a summary of the different options.')
     st.markdown('''<span style="font-size:12pt;color:black;font-weight:bold;">Regional Hospitals:</span>
@@ -389,8 +389,9 @@ def exp_opnote():
         st.text(".")
     with st.beta_expander('Show All [Click Here]'):
         LSA = st.radio('LSA:',
-                          options=['01 - Oesophagus',
-                                   '02 - Stomach',
+                          options=['02 - Oesophagus',
+                                   '03 - Stomach',
+                                   '04 - Duodenum',
                                    '05 - Small bowel',
                                    '06 - Appendix',
                                    '09 - Hernia',
@@ -399,9 +400,9 @@ def exp_opnote():
                                    '27 - Parathyroid',
                                    ],index=0)
                             
-        if LSA == '01 - Oesophagus':
-            st.write('01 - OESOPHAGUS')
-            st.write('* **010199** tbc')
+        if LSA == '02 - Oesophagus':
+            st.write('02 - OESOPHAGUS')
+            st.write('* **020199** tbc')
 
         if LSA == '05 - Small bowel':
             st.write('01 - SMALL BOWEL')
