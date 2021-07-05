@@ -44,7 +44,7 @@ def main():
     elif page == "Excision Ltd Team":       show_the_app_team()
 
     st.sidebar.markdown('''**Contribute**''')
-    st.sidebar.info("Contact Maria or Alastair to add useful info.")
+    st.sidebar.info("Contact David Pearson to add useful info.")
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
@@ -62,7 +62,7 @@ def show_the_app_team():
 
     st.sidebar.markdown("---")
     st.sidebar.markdown('''**Contact details**''')
-    st.sidebar.info('''anne.ewing@nhslothian.scot.nhs.uk''')
+    st.sidebar.info('''David.Pearson@nhslothian.scot.nhs.uk''')
     
     st.subheader("App Developer")
     about1 = st.checkbox("Alastair Hayes")
@@ -95,8 +95,8 @@ def show_the_app_team():
 #                                                                                                 #
 #-------------------------------------------------------------------------------------------------#
 def show_explore():
-    st.write('''_# UNDER CONSTRUCTION # UNDER CONSTRUCTION # UNDER CONSTRUCTION #_''')
-    st.markdown('''# RIE General Surgery Registrar ToolKit''')
+    #st.write('''_# UNDER CONSTRUCTION # UNDER CONSTRUCTION # UNDER CONSTRUCTION #_''')
+    st.markdown('''# RIE General/Vascular Surgical Team ToolKit''')
     exp = st.radio('Go to:',
                                 ["About",
                                  "Regional Hospitals",
@@ -174,7 +174,7 @@ def exp_hosp():
     color= df2['Colour'].astype(str)
 
     types = st.selectbox('Select hospital:',
-                     options=["Choose a hospital",
+                     options=["Options",
                               "Astley Ainslie Hospital",
                               "Borders General Hospital - BGH",
                               "Forth Valley Hospital",
@@ -183,17 +183,17 @@ def exp_hosp():
                               "Spire Murrayfield",
                               "St. John's Hospital - SJH",
                               "Victoria Hospital - VHK",
-                              "Western General Hospital - WGH",], index=4)
+                              "Western General Hospital - WGH",], index=0)
     
     figG3 = go.Figure()
     figG3.add_trace(go.Scattermapbox(lat=site_lat,lon=site_lon,mode='markers',
                 marker=go.scattermapbox.Marker(size=12,color=color,opacity=0.8),
                 text=text,hoverinfo='text',))
 
-    if types == "Choose a hospital":
+    if types == "Options":
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
-                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.92760,lon=-3.21384),
+                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.931,lon=-3.21384),
                 pitch=5,zoom=6.0,style='satellite-streets'))
 
     if types == "Astley Ainslie Hospital":
