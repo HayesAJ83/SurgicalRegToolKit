@@ -59,29 +59,23 @@ def show_the_app_team():
                 **SurgicalEps** Web App was the first major project.''',unsafe_allow_html=True)
 
     st.sidebar.markdown("---")
-    st.sidebar.markdown('''**Contact details**''')
-    st.sidebar.info('''David.Pearson@nhslothian.scot.nhs.uk''')
     
     st.subheader("App Developer")
     about1 = st.checkbox("Alastair Hayes")
     if about1:
-        st.markdown('''Alastair is a Specialty Training Registrar in Edinburgh with interests
-                    in Upper GI, Endocrine and Emergency General Surgery. His qualifications
-                    include FRCSEd (Gen Surg) & PhD.''')
-        st.markdown('''He is working to develop data science and software solutions for clinical
-                    data systems, research and education in surgical practice.''')
+        st.markdown('''Alastair is a Specialty Training Registrar in Newcastle with interests
+                    in Upper GI, Endocrine and Emergency General Surgery.''')
 
     st.subheader("Associate App Developer")
     about2 = st.checkbox('''Anne Ewing''')
     if about2:
         st.markdown('''Anne is Specialty Training Registrar in Edinburgh with interests in Upper
-                    GI, Hernias and Emergency General Surgery. She is passionate about surgical
-                    teaching and outside work Anne is a competitive triathlete.''')
+                    GI, Hernias and Emergency General Surgery.''')
 
-    st.subheader("Directorate Dude")
-    about2 = st.checkbox('''David Pearson''')
-    if about2:
-        st.markdown('''We're all secretly jealous of David's ace haircut!''')
+    st.subheader("Directorate")
+    about3 = st.checkbox('''David Pearson''')
+    if about3:
+        st.markdown('''Detail......''')
 
 
     st.subheader("Acknowledgements")
@@ -121,7 +115,7 @@ def show_explore():
     elif exp == "Useful Info & Contact Numbers":        exp_Info()              #8
 
     st.markdown("---")
-    st.write('''©2021 Excision Limited. All rights reseved.''')
+    st.write('''Copyright © 2021 Excision Limited''')
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
