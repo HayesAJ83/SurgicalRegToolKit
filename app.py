@@ -43,8 +43,6 @@ def main():
     if page ==   "Registrar Toolkit":       show_explore()
     elif page == "Excision Ltd Team":       show_the_app_team()
 
-    st.sidebar.markdown('''**Contribute**''')
-    st.sidebar.info("Contact David Pearson to add useful info.")
 
 #-------------------------------------------------------------------------------------------------#
 #                                                                                                 #
@@ -216,7 +214,7 @@ def exp_hosp():
 
     if types == "East Lothian Community Hospital - ELCH":
         figG3.update_layout(
-                autosize=True,#hovermode='closest',
+                autosize=True,hovermode='closest',
                 showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.95728,lon=-2.79823),
                 pitch=5,zoom=8.0,style='satellite-streets'))
