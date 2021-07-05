@@ -190,9 +190,9 @@ def exp_hosp():
                               "Western General Hospital - WGH",], index=0)
     
     figG3 = go.Figure()
-    figG3.add_trace(go.Scattermapbox(lat=site_lat,lon=site_lon,mode='markers+text',
-                marker=go.scattermapbox.Marker(size=12,color=color,opacity=0.8),
-                text=text))
+    figG3.add_trace(go.Scattermapbox(lat=site_lat,lon=site_lon,mode='markers',
+                marker=go.scattermapbox.Marker(size=11,color=color,opacity=0.7),
+                text=text,hoverinfo='text'))
 
     if types == "Options":
         figG3.update_layout(
