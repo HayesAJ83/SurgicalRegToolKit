@@ -167,7 +167,7 @@ def exp_hosp():
     st.markdown("---")
     st.subheader('''Regional Hospitals''')
     #st.write(' ')
-    url = 'https://raw.githubusercontent.com/HayesAJ83/SurgicalRegToolKit/main/Lothian4python_Lite.csv'
+    url = "https://raw.githubusercontent.com/HayesAJ83/SurgicalRegToolKit/main/Lothian4python_Lite.csv"
     df1 = pd.read_csv(url)
     df2 = df1.sort_values(by=['Place'],ascending=True)
     mapbox_access_token = 'pk.eyJ1IjoiYWpoYXllczgzIiwiYSI6ImNrY2pqM2lvMDB4Z24ydG8zdDl0NTYwbTUifQ.2DKVfTAaE77XAXMpDeq_Pg'
