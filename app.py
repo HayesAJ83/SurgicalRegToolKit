@@ -80,12 +80,15 @@ def show_the_app_team():
                     GI, Hernias and Emergency General Surgery. She is passionate about surgical
                     teaching and outside work Anne is a competitive triathlete.''')
 
+    st.subheader("Directorate Dude")
+    about2 = st.checkbox('''David Pearson''')
+    if about2:
+        st.markdown('''We're all secretly jealous of David's ace haircut!''')
+
 
     st.subheader("Acknowledgements")
-    st.markdown('''[Google](https://www.google.com/search/howsearchworks/?fg=1),
-                   [Mapbox](https://www.mapbox.com),
-                   [Pandas](https://pandas.pydata.org), [Plotly](https://plotly.com/python/),
-                   [PubMed&reg;](http://www.ncbi.nlm.nih.gov/pubmed),
+    st.markdown('''[Mapbox](https://www.mapbox.com),
+                   [Plotly](https://plotly.com/python/),
                    [Streamlit](https://www.streamlit.io)''')
 
 #-------------------------------------------------------------------------------------------------#
@@ -96,11 +99,12 @@ def show_the_app_team():
 #-------------------------------------------------------------------------------------------------#
 def show_explore():
     #st.write('''_# UNDER CONSTRUCTION # UNDER CONSTRUCTION # UNDER CONSTRUCTION #_''')
-    st.markdown('''# RIE General/Vascular Surgical Team ToolKit''')
+    st.markdown('''# RIE Gen-Vasc Surgery Team ToolKit''')
     exp = st.radio('Go to:',
                                 ["About",
                                  "Regional Hospitals",
-                                 "UGI / General Surgery Dept at RIE",
+                                 "UGI / General Surgery at RIE",
+                                 "Vascular Surgery",
                                  "Emergency Teams (ET1/ET2)",
                                  "Elective Work",
                                  "Dictating & LSA Code Help",
@@ -110,7 +114,8 @@ def show_explore():
     
     if   exp == "About":                                exp_about()             #1
     elif exp == "Regional Hospitals":                   exp_hosp()              #2
-    elif exp == "UGI / General Surgery Dept at RIE":    exp_UGI()               #3
+    elif exp == "UGI / General Surgery at RIE":         exp_UGI()               #3
+    #"Vascular Surgery"
     elif exp == "Emergency Teams (ET1/ET2)":            exp_ET()                #4
     elif exp == "Elective Work":                        exp_Elective()          #5
     elif exp == "Dictating & LSA Code Help":            exp_opnote()            #6
@@ -175,9 +180,10 @@ def exp_hosp():
 
     types = st.selectbox('Select hospital:',
                      options=["Options",
-                              "Astley Ainslie Hospital",
+                              "Astley Ainslie Hospital - AAH",
                               "Borders General Hospital - BGH",
-                              "Forth Valley Hospital",
+                              "East Lothian Community Hospital - ELCH",
+                              "Forth Valley Hospital - FVH",
                               "Royal Edinburgh Hospital",
                               "Royal Infirmary of Edinburgh - RIE",
                               "Spire Murrayfield",
@@ -194,9 +200,9 @@ def exp_hosp():
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.931,lon=-3.21384),
-                pitch=5,zoom=6.0,style='satellite-streets'))
+                pitch=5,zoom=6.8,style='satellite-streets'))
 
-    if types == "Astley Ainslie Hospital":
+    if types == "Astley Ainslie Hospital - AAH":
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.92982,lon=-3.19899),
@@ -208,7 +214,14 @@ def exp_hosp():
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.59573,lon=-2.74245),
                 pitch=5,zoom=7.0,style='satellite-streets'))
 
-    if types == "Forth Valley Hospital":
+    if types == "East Lothian Community Hospital - ELCH":
+        figG3.update_layout(
+                autosize=True,#hovermode='closest',
+                showlegend=False,width=340,height=240,
+                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.95728,lon=-2.79823),
+                pitch=5,zoom=8.0,style='satellite-streets'))
+
+    if types == "Forth Valley Hospital - FVH":
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=56.02526,lon=-3.84879),
