@@ -118,10 +118,6 @@ def show_explore():
     elif exp == "Useful Info & Contact Numbers":        exp_Info()              #8
 
     st.markdown("---")
-    st.subheader('Disclaimer')
-    st.write('''Educational purposes.''')
-    st.markdown("---")
-    st.subheader('Copyright')
     st.write('''©2021 Excision Limited. All rights reseved.''')
 
 #-------------------------------------------------------------------------------------------------#
@@ -178,7 +174,8 @@ def exp_hosp():
     color= df2['Colour'].astype(str)
 
     types = st.selectbox('Select hospital:',
-                     options=["Astley Ainslie Hospital",
+                     options=["Choose a hospital",
+                              "Astley Ainslie Hospital",
                               "Borders General Hospital - BGH",
                               "Forth Valley Hospital",
                               "Royal Edinburgh Hospital",
@@ -192,6 +189,12 @@ def exp_hosp():
     figG3.add_trace(go.Scattermapbox(lat=site_lat,lon=site_lon,mode='markers',
                 marker=go.scattermapbox.Marker(size=12,color=color,opacity=0.8),
                 text=text,hoverinfo='text',))
+
+    if types == "Choose a hospital":
+        figG3.update_layout(
+                autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
+                mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.92760,lon=-3.21384),
+                pitch=5,zoom=6.0,style='satellite-streets'))
 
     if types == "Astley Ainslie Hospital":
         figG3.update_layout(
