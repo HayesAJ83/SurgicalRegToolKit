@@ -190,9 +190,9 @@ def exp_hosp():
                               "Western General Hospital - WGH",], index=0)
     
     figG3 = go.Figure()
-    figG3.add_trace(go.Scattermapbox(lat=site_lat,lon=site_lon,mode='markers',
+    figG3.add_trace(go.Scattermapbox(lat=site_lat,lon=site_lon,mode='markers+text',
                 marker=go.scattermapbox.Marker(size=12,color=color,opacity=0.8),
-                text=text,hoverinfo='text',))
+                text=text))
 
     if types == "Options":
         figG3.update_layout(
@@ -214,8 +214,7 @@ def exp_hosp():
 
     if types == "East Lothian Community Hospital - ELCH":
         figG3.update_layout(
-                autosize=True,hovermode='closest',
-                showlegend=False,width=340,height=240,
+                autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=55.95728,lon=-2.79823),
                 pitch=5,zoom=8.0,style='satellite-streets'))
 
