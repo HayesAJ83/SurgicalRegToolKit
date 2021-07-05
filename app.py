@@ -62,8 +62,7 @@ def show_the_app_team():
 
     st.sidebar.markdown("---")
     st.sidebar.markdown('''**Contact details**''')
-    st.sidebar.info('''Get in touch with any comments, queries or suggestions about this
-                    App:surgicaleponyms@gmail.com''')
+    st.sidebar.info('''anne.ewing@nhslothian.scot.nhs.uk''')
     
     st.subheader("App Developer")
     about1 = st.checkbox("Alastair Hayes")
@@ -81,10 +80,6 @@ def show_the_app_team():
                     GI, Hernias and Emergency General Surgery. She is passionate about surgical
                     teaching and outside work Anne is a competitive triathlete.''')
 
-    st.subheader("Surgical Registrar ToolKit App - Coordinator")
-    about2 = st.checkbox('''Maria Boland''')
-    if about2:
-        st.markdown('''Maria is awesome too...detail....:)....''')
 
     st.subheader("Acknowledgements")
     st.markdown('''[Google](https://www.google.com/search/howsearchworks/?fg=1),
@@ -173,7 +168,7 @@ def exp_hosp():
     st.subheader('''Regional Hospitals''')
     #st.write(' ')
     url = 'https://raw.githubusercontent.com/HayesAJ83/SurgicalRegToolKit/main/Lothian4python_Lite.csv'
-    df1 = pd.read_csv(url, dtype={'PMID':str,'Year':int})
+    df1 = pd.read_csv(url)
     df2 = df1.sort_values(by=['Place'],ascending=True)
     mapbox_access_token = 'pk.eyJ1IjoiYWpoYXllczgzIiwiYSI6ImNrY2pqM2lvMDB4Z24ydG8zdDl0NTYwbTUifQ.2DKVfTAaE77XAXMpDeq_Pg'
     site_lat = df2['Lat_A1']                          
@@ -241,6 +236,7 @@ def exp_hosp():
                 pitch=5,zoom=8.5,style='satellite-streets'))
         
     if types == "Victoria Hospital - VHK":
+        st.write('''Info about getting to St John's. The Day Surgery unit and Endoscopy on ground floor''')
         figG3.update_layout(
                 autosize=True,hovermode='closest',showlegend=False,width=340,height=240,
                 mapbox=dict(accesstoken=mapbox_access_token,bearing=0,center=dict(lat=56.12519,lon=-3.15814),
@@ -378,14 +374,27 @@ def exp_opnote():
                     intervention, such as operation or endoscopy, or no operation ('99'). For instance
                     no operation for acute cholecystitis would be code '100599' ''')
     with st.beta_expander('Show Favourites [Click Here]'):
+        st.write('OESOPHAGUS')
+        st.write('* **020667** Lap myotomy')
+        st.text(".")
         st.write('APPENDIX')
         st.write('* **060104** Lap Appendicectomy')
         st.write('* **0601xx** Lap to Open Appendicectomy')
+        st.text(".")
+        st.write('APPENDIX')
+        st.write('* **060104** Lap Appendicectomy')
+        st.write('* **0601xx** Lap to Open Appendicectomy')
+        st.text(".")
+        st.write('HERNIA')
+        st.write('* **091341** Preperitoneal lap hernia repair with synthetic mesh')
         st.text(".")
         st.write('GALLBLADDER')
         st.write('* **100324** Lap Cholecystectomy - Chronic Cholecystitis')
         st.write('* **100524** Lap Cholecystectomy - Acute Cholecystitis')
         st.write('* **100599** No operation - Acute Cholecystitis')
+        st.text(".")
+        st.write('PARATHYROID')
+        st.write('* **270201** Excision of single gland')
         st.text(".")
     with st.beta_expander('Show All [Click Here]'):
         LSA = st.radio('LSA:',
@@ -403,19 +412,21 @@ def exp_opnote():
         if LSA == '02 - Oesophagus':
             st.write('02 - OESOPHAGUS')
             st.write('* **020199** tbc')
+            st.write('* **020667** Lap myotomy')
 
         if LSA == '05 - Small bowel':
             st.write('01 - SMALL BOWEL')
-
-
-        if LSA == '09 - Hernia':
-            st.write('09 - HERNIA')
 
         if LSA == '06 - Appendix':
             st.write('06 - APPENDIX')
             st.write('* **060104** Lap Appendicectomy')
             st.write('* **060501** ?normal appendix')
             
+        if LSA == '09 - Hernia':
+            st.write('09 - HERNIA')
+            st.write('* **091021** Open hernia repair with synthetic mesh')
+            st.write('* **091041** Lap hernia repair with synthetic mesh')
+            st.write('* **091341** Preperitoneal laparoscopic hernia repair with synthetic mesh')
             
         if LSA == '10 - Gallbladder':
             st.write('10 - GALLBLADDER')
@@ -462,7 +473,26 @@ def exp_opnote():
             st.markdown('''* Open umbilical **laparoscopic access** was uneventful, using 12-millimeter port, CO2 insufflation and scope.''')
             
             
+        if Ops == 'Ivor Lewis Oesophagectomy':
+            st.markdown("---")
+            st.markdown('''This operation was an **Ivor Lewis Oesophagectomy with Feeding Jejunostomy**''')
+            st.markdown('''**LSA code is xx-xx-xx**''')
+            st.markdown('''Patient's **Name** is .....''')
+            st.markdown('''Operation **Date** was .....''')
+            st.markdown('''Patient's **CHI number** is .....''')
+            st.markdown('''**Theatre** number was .....''')
+            st.markdown('''Patient's **Consultant** was .....''')
+            st.markdown('''**Operating Surgeons** were .....''')
+            st.markdown('''Surgical **Assistant** was ..... (if applicable)''')
+            st.markdown('''**Anaethetist** was ..... (if you know)''')
+            st.markdown('''**Indication** was .....''')
+            st.markdown('''**Findings**: .''')
+            st.markdown('''The operation note is as follows:''')
+            st.markdown('''* **WHO check list** done.''')
+            st.markdown('''* For the Abdominal Phase, the patient **positioned** supine.''')
+            st.markdown('''* Patient's skin was **prepared & draped** in the usual fashion.''')
             
+
             
             
 
